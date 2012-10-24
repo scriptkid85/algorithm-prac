@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;WFFindUnion/sources/weightedfindunion&apos; to &apos;weightedfindunion.cpp&apos;" description="Rename resource &apos;weightedfindunion&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="sources/weightedfindunion" name="weightedfindunion.cpp" stamp="1348734552666" updateReferences="true"/>
+</session>

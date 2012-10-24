@@ -1,0 +1,50 @@
+!SESSION 2012-07-10 12:05:51.816 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-07-10 12:07:29.529
+!MESSAGE Indexed 'TSH' (0 sources, 34 headers) in 0.62 sec: 655 declarations; 799 references; 3 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+!SESSION 2012-07-26 19:34:38.878 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-07-26 19:35:43.537
+!MESSAGE Indexed 'Malloclab' (0 sources, 34 headers) in 0.45 sec: 655 declarations; 799 references; 3 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+!SESSION 2012-09-04 22:51:38.833 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-09-04 22:53:01.525
+!MESSAGE Indexed 'Allsort' (0 sources, 34 headers) in 0.48 sec: 655 declarations; 799 references; 3 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+!SESSION 2012-09-27 16:26:35.659 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-09-27 16:27:27.449
+!MESSAGE Indexed 'WFFindUnion' (0 sources, 76 headers) in 1.05 sec: 2,139 declarations; 2,375 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-09-27 16:28:06.922
+!MESSAGE Indexed 'weightedfindunion' (0 sources, 76 headers) in 0.72 sec: 2,139 declarations; 2,375 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+!SESSION 2012-10-04 01:15:52.754 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_24
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-04 01:17:33.964
+!MESSAGE Indexed 'SieveEratosthenes' (0 sources, 76 headers) in 1.23 sec: 2,139 declarations; 2,375 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)

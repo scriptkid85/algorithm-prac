@@ -1,0 +1,23 @@
+
+**** Build of configuration Debug for project SieveEratosthenes ****
+
+make all 
+Building file: ../resource/sieveeratosthenes.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"resource/sieveeratosthenes.d" -MT"resource/sieveeratosthenes.d" -o "resource/sieveeratosthenes.o" "../resource/sieveeratosthenes.cpp"
+Finished building: ../resource/sieveeratosthenes.cpp
+ 
+Building target: SieveEratosthenes
+Invoking: GCC C++ Linker
+g++  -o "SieveEratosthenes"  ./resource/sieveeratosthenes.o   
+Finished building target: SieveEratosthenes
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project SieveEratosthenes ****
+
+make all 
+make: Nothing to be done for `all'.
+
+**** Build Finished ****

@@ -1,0 +1,16 @@
+
+**** Build of configuration Debug for project WFFindUnion ****
+
+make all 
+Building file: ../sources/weightedfindunion.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/weightedfindunion.d" -MT"sources/weightedfindunion.d" -o "sources/weightedfindunion.o" "../sources/weightedfindunion.cpp"
+Finished building: ../sources/weightedfindunion.cpp
+ 
+Building target: WFFindUnion
+Invoking: GCC C++ Linker
+g++  -o "WFFindUnion"  ./sources/weightedfindunion.o   
+Finished building target: WFFindUnion
+ 
+
+**** Build Finished ****
