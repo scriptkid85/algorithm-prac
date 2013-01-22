@@ -1,23 +1,53 @@
 
-**** Build of configuration Debug for project SieveEratosthenes ****
+**** Build of configuration Debug for project Chapter11 ****
 
 make all 
-Building file: ../resource/sieveeratosthenes.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"resource/sieveeratosthenes.d" -MT"resource/sieveeratosthenes.d" -o "resource/sieveeratosthenes.o" "../resource/sieveeratosthenes.cpp"
-Finished building: ../resource/sieveeratosthenes.cpp
+Building file: ../sources/11.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/11.d" -MT"sources/11.d" -o "sources/11.o" "../sources/11.cpp"
+../sources/11.cpp: In function ‘int* findinmatrix(int**, int, int, int, int, int)’:
+../sources/11.cpp:91:6: warning: address of local variable ‘result’ returned [enabled by default]
+../sources/11.cpp:91:6: warning: address of local variable ‘result’ returned [enabled by default]
+../sources/11.cpp: In function ‘void createtower(int, std::vector<int*>, std::vector<int*>*)’:
+../sources/11.cpp:136:31: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+../sources/11.cpp: In function ‘std::vector<int*> createtower(std::vector<int*>)’:
+../sources/11.cpp:157:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+Finished building: ../sources/11.cpp
  
-Building target: SieveEratosthenes
-Invoking: GCC C++ Linker
-g++  -o "SieveEratosthenes"  ./resource/sieveeratosthenes.o   
-Finished building target: SieveEratosthenes
+Building target: Chapter11
+Invoking: Cross G++ Linker
+g++  -o "Chapter11"  ./sources/11.o   
+Finished building target: Chapter11
  
 
 **** Build Finished ****
 
-**** Build of configuration Debug for project SieveEratosthenes ****
+**** Build of configuration Debug for project Chapter11 ****
 
 make all 
 make: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter11 ****
+
+make all 
+Building file: ../sources/11.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/11.d" -MT"sources/11.d" -o "sources/11.o" "../sources/11.cpp"
+../sources/11.cpp: In function ‘int* findinmatrix(int**, int, int, int, int, int)’:
+../sources/11.cpp:91:6: warning: address of local variable ‘result’ returned [enabled by default]
+../sources/11.cpp:91:6: warning: address of local variable ‘result’ returned [enabled by default]
+../sources/11.cpp: In function ‘void createtower(int, std::vector<int*>, std::vector<int*>*)’:
+../sources/11.cpp:136:31: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+../sources/11.cpp: In function ‘std::vector<int*> createtower(std::vector<int*>)’:
+../sources/11.cpp:157:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+Finished building: ../sources/11.cpp
+ 
+Building target: Chapter11
+Invoking: Cross G++ Linker
+g++  -o "Chapter11"  ./sources/11.o   
+Finished building target: Chapter11
+ 
 
 **** Build Finished ****

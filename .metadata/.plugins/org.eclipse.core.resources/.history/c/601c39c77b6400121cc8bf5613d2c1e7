@@ -1,0 +1,43 @@
+(2) For some special sorting problem which has a special ordering rule, changing the comparator
+	is a good way to solve it.
+	
+	note !!!!: for "sort" function, the comparator(i ,j) function is a bool and return true
+	if i < j, otherwise return false.
+	
+	
+(4) details of "!external sort!"
+
+
+(6) Search in sorted matrix (row sorted and column sorted)
+	Binary on the diagonal and find the first element which greater than target,
+	then the left top part and right low part has been eliminated.
+	Then recursively search the left low and right top parts!!!
+	
+	-----------------
+	|       |       |
+	|       |       |
+	|---------------|
+	|       |       |
+	|       |       |
+	-----------------
+	
+	
+***(7) Longest increasing subsequence problem:  (Remember: increasing ! not non-decreasing)
+	a) O(n^2) algorithm: look for the longest subsequence ending with ith element; i from 0 to size of subsequence.
+	b) O(nlogn) algorithm: (HARD!!!!) or say nlog k, output sensitive
+		Use another two arrays to store : (1)M[j] stores the smallest element ('s index) among all length j's sequences' bottom elements.
+										  (2)P[i] stores the predecessor of element x[i] in the optimal sequence.
+										  
+	   for i = 0 to n
+	   		if(x[i] > x[M[L - 1]]) 
+	   			M[L] = i;   // L is the current optimal length
+	   			L++; (if M is implemented with vector or other container, the size is L)
+	   			continue;
+	   		else using BINARY Search to find the largest j <= L, such that x[M[j - 1]] < x[i] < x[M[j]],
+	   			replace M[j] = i;
+	   			and P[M[j - 1]] = i;
+	   endfor
+	   the final result can be retrived from P[]
+	
+	Longest common subsequence problem: an extension (for multiple sequences)! which has best O(n^2)
+	

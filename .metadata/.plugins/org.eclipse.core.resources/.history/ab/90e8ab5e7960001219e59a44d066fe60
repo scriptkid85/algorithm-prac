@@ -1,0 +1,45 @@
+#include <iostream>
+#include <stdlib.h>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+//(2)
+string binaryofdouble(double a){
+	if(a >= 1 || a <= 0)return NULL;
+
+	string r;
+	double num = a;
+	while(num > 0){
+		num *= 2;
+		if(num >= 1){
+			r.append("1");
+			num -= 1;
+		}
+		else r.append("0");
+	}
+	return r;
+}
+
+//(3)
+void printnextlargeasamll(int a){
+
+}
+
+//(7) Important and hard!
+int findloss(vector<int*> array,  int position){
+	if(array.size() == 0)return 0;
+
+	vector<int*> zeros, ones;
+	while(array.size() > 0){
+		vector<int *>::iterator it;
+		if(it = array.begin();){
+
+		}
+	}
+}
+
+int main(int argc, char *argv[]){
+	printnextlargeasamll(5);
+}

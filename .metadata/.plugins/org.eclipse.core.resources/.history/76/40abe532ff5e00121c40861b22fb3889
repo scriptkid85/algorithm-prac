@@ -1,0 +1,9 @@
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+template <class Item>
+	class DOUBLE_QUEUE{
+
+};

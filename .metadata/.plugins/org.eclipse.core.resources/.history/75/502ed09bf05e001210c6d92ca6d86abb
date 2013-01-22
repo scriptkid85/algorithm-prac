@@ -1,0 +1,17 @@
+#include <iostream>
+#include <stdlib.h>
+#include <3STACK.cpp>
+
+//(1)
+//TriSTACK in 3STACK.cpp
+
+
+//(2)
+//MinSTACK in MinSTACK.cpp
+
+//(3)
+
+
+int main(int argc, char *argv[]){
+
+}

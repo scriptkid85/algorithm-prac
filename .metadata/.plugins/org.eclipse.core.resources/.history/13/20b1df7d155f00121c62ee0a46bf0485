@@ -1,0 +1,88 @@
+#include <iostream>
+#include <stdlib.h>
+#include <math.h>
+
+using namespace std;
+
+struct treenode{
+	int item;
+	treenode *left;
+	treenode *right;
+	treenode(int x, treenode *l, treenode *r){
+		item = x;
+		left = l;
+		right = r;
+	}
+};
+
+typedef treenode *treelink;
+
+void printnode(int x, int h){
+	for(int i = 0; i < h; i++)cout<< "  ";
+	cout << x << endl;
+}
+
+void printtree(treelink root, int h){
+	if(root == 0){
+		printnode(0, h);
+		return;
+	}
+	printtree(root -> left, h + 1);
+	printnode(root -> item, h);
+	printtree(root -> right, h + 1);
+}
+
+int checkbinary(treelink root){
+	int h1 = 0, h2 = 0, height;
+	if(root -> left != 0)
+		h1 = checkbinary(root -> left);
+	if(root -> right != 0)
+		h2 = checkbinary(root -> right);
+
+	if(h1 == -1 || h2 == -1 || abs(h1 - h2) > 1)return -1;
+	else height = (h1 >= h2 ? h1 : h2) + 1;
+	return height;
+
+}
+
+treelink createBT(int a[], int l, int r, treelink root){
+	if(r <= l)root
+	createBT
+}
+
+
+int main(int argc, char *argv[]){
+
+	treelink root = new treenode(1, 0, 0);
+	treelink t1 = new treenode(2, 0, 0);
+	treelink t2 = new treenode(3, 0, 0);
+	treelink t3 = new treenode(4, 0, 0);
+	treelink t4 = new treenode(5, 0, 0);
+	treelink t5 = new treenode(6, 0, 0);
+	treelink t6 = new treenode(7, 0, 0);
+	treelink t7 = new treenode(8, 0, 0);
+	treelink t8 = new treenode(9, 0, 0);
+	treelink t9 = new treenode(10, 0, 0);
+	treelink t10 = new treenode(11, 0, 0);
+	treelink t11 = new treenode(12, 0, 0);
+	treelink t12 = new treenode(13, 0, 0);
+	treelink t13 = new treenode(14, 0, 0);
+	treelink t14 = new treenode(15, 0, 0);
+
+	root -> left = t1;
+	root -> right = t2;
+	t1 -> left = t3;
+	t1 -> right = t4;
+	t2 -> left = t5;
+	t2 -> right = t6;
+	t3 -> left = t7;
+	t3 -> right = t8;
+	t4 -> left = t9;
+	t4 -> right = t10;
+	t5 -> left = t11;
+	t5 -> right = t12;
+	t6 -> left = t13;
+	t6 -> right = t14;
+	printtree(root, 0);
+	cout << checkbinary(root) << endl;
+}

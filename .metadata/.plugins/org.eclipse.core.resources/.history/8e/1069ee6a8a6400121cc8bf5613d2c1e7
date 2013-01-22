@@ -1,0 +1,26 @@
+
+Testing a real world object:
+
+1)who will use it and why? Identify user groups first.
+
+2)What are the use cases? Identify how will these user groups use it.
+
+3)What are the bounds of use? (Extreme case of usage, using environment: should it still work in these cases? how?)
+
+4)What are the stress/ failure conditions? 
+
+5)How can you test it? (Improving the testing speed, testing duration under "normal" usage, etc.)
+
+Testing a software:
+
+1) Are we doing BlackBox tesing or White Box tesing?
+
+2) Users? Why?
+
+3) Use cases?
+
+4) Bounds of usage?
+
+5) Stress/ failure condition?
+
+6) How to do the test?

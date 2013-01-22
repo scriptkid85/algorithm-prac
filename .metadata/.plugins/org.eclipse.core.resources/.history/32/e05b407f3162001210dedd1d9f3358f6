@@ -1,0 +1,10 @@
+(3) the magic index: note that if the elements are non-distinct, then the binary search idea need to be considered carefully, 
+	since then the array cannot be cut half! but since we know all the left side val <= current val, right side val>= current val,
+	so some indice can be ignored.
+	
+	
+(5) full sequence:
+	(1)dictionary sequence algorithm:
+		from right to left, find the first i that a[i] > a[i + 1]
+		from i + 1 to n, find the smallest a[j] that a[j] > a[i], switch a[i], a[j], then reverse a[i + 1]....a[n]
+	

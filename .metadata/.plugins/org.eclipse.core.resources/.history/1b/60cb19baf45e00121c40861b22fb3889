@@ -1,0 +1,39 @@
+template <class Item>
+
+#define THRESHOLD 3
+
+class INCRESTACK{
+private:
+	struct node{
+		Item *s;
+		node *pre;
+		node *next;
+		node(Item *item, node *t){
+			s = item;
+			next = t;
+		}
+	};
+
+	typedef node *mylink;
+
+	int numofstack, top;
+	mylink stackhead, stacktail;
+
+public:
+	INCRESTACK(){
+		numofstack = 1;
+		top = 0;
+	}
+
+	int empty() const{
+		return (top == 0 && numofstack == 1);
+	}
+
+	void push(Item x){
+		if(top >= THRESHOLD){
+			numofstack ++;
+			top = 0;
+
+		}
+	}
+};

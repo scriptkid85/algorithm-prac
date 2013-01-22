@@ -1,0 +1,43 @@
+#include <iostream>
+#include <stdlib.h>
+#include <fstream>
+#include <string>
+
+#define MAXNUM = 1000
+
+using namespace std;
+
+int main(int argc, char *argv[]){
+	if(argc != 2){
+		cout << "Have to input the k." << endl;
+		return 0;
+	}
+
+	ifstream infile("weather-data.txt");
+	int k = atoi(argv[1]), n;
+	int sundays = 0, correctcnt = 0, predictioncnt = 0;
+	string s;
+
+	n = 1;
+	while(n <= k && infile.getline(str,LINE_LENGTH) ){
+		n ++;
+		if(!s.compare("sun"))sundays++;
+	}
+	while(getline(infile, s)){
+		if(sundays > (k - sundays)){
+			if(!s.compare("sun")){
+				correctcnt ++;
+				sundays ++;
+			}
+		}
+		else{
+			if(!s.compare("rain")){
+				correctcnt ++;
+			}
+		}
+		k ++;
+		predictioncnt ++;
+	}
+	return (correctcnt / predictioncnt);
+
+}

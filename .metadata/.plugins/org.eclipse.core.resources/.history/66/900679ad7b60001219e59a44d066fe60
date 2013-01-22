@@ -1,0 +1,68 @@
+#include <iostream>
+#include <stdlib.h>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+//(2)
+string binaryofdouble(double a){
+	if(a >= 1 || a <= 0)return NULL;
+
+	string r;
+	double num = a;
+	while(num > 0){
+		num *= 2;
+		if(num >= 1){
+			r.append("1");
+			num -= 1;
+		}
+		else r.append("0");
+	}
+	return r;
+}
+
+//(3)
+void printnextlargeasamll(int a){
+
+}
+
+//(7) Important and hard!
+int findloss(vector<int*> array){
+	if(array.size() == 0)return 0;
+
+	vector<int*> zeros, ones;
+	int r = 0, n = 0, onecnt, zerocnt, position = 0;
+	while(array.size() > 0){
+		for(vector<int *>::iterator it = array.begin(); it != array.end() ; ++it){
+			if((*it)[position] == 1){
+				ones.push_back(*it);
+				onecnt ++;
+			}
+			else {
+				zeros.push_back(*it);
+				zerocnt ++;
+			}
+		}
+		if(onecnt < zerocnt) {
+			r = r | (1 << n);
+			array = ones;
+		}
+		else array = zeros;
+		n ++;
+		onecnt = 0;
+		zerocnt = 0;
+	}
+
+	return r;
+}
+
+int main(int argc, char *argv[]){
+	int a1[1] = {0, 0, 0, 0};
+	int a2[1] = {0, 0, 0, 1};
+	int a3[1] = {0, 0, 1, 0};
+	int a4[1] = {0, 0, 1, 1};
+
+	vector<int *> a;
+	a.push_back(a1);
+}

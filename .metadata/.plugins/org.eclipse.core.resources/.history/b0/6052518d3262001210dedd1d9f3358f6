@@ -1,0 +1,14 @@
+(3) the magic index: note that if the elements are non-distinct, then the binary search idea need to be considered carefully, 
+	since then the array cannot be cut half! but since we know all the left side val <= current val, right side val>= current val,
+	so some indice can be ignored.
+	
+	
+(5) full sequence:
+	(1)dictionary sequence algorithm:
+		from right to left, find the first i that a[i] > a[i + 1]
+		from i + 1 to n, find the smallest a[j] that a[j] > a[i], switch a[i], a[j], then reverse a[i + 1]....a[n]
+	(2)递增进位数制法:
+		利用中介数，中介数的每一位是对应位数右边小于此数的个数，比如 4312 的中介数 3200，
+		中介数 + 1 是序列中下一数的中介数， 但是中介数是 ”递增进位“ ： 121 + 1 = 200
+		反算回序列数的方法：
+		中介数k1、k2、......、kn-1的各位数字顺序表示排列中的数字n、n-1、......、2在排列中距右端的的空位数

@@ -1,0 +1,23 @@
+
+**** Build of configuration Debug for project MDDBhw2q2 ****
+
+make all 
+Building file: ../sources/fractal.cc
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/fractal.d" -MT"sources/fractal.d" -o "sources/fractal.o" "../sources/fractal.cc"
+../sources/fractal.cc: In function ‘Vec NormalizeDirec(Vec)’:
+../sources/fractal.cc:49:9: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+../sources/fractal.cc: In function ‘int main(int, char**)’:
+../sources/fractal.cc:204:37: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘std::queue<surface>::size_type {aka long unsigned int}’ [-Wformat]
+../sources/fractal.cc:212:68: warning: format ‘%lf’ expects a matching ‘double’ argument [-Wformat]
+../sources/fractal.cc:212:68: warning: format ‘%lf’ expects a matching ‘double’ argument [-Wformat]
+../sources/fractal.cc:212:68: warning: format ‘%lf’ expects a matching ‘double’ argument [-Wformat]
+Finished building: ../sources/fractal.cc
+ 
+Building target: MDDBhw2q2
+Invoking: GCC C++ Linker
+g++  -o "MDDBhw2q2"  ./sources/fractal.o   
+Finished building target: MDDBhw2q2
+ 
+
+**** Build Finished ****

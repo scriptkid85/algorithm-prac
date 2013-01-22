@@ -1,0 +1,40 @@
+#include <iostream>
+#include <stdlib.h>
+#include "TRISTACK.cpp"
+#include "MinSTACK.cpp"
+
+using namespace std;
+//(1)
+//TriSTACK in 3STACK.cpp
+
+
+//(2)
+//MinSTACK in MinSTACK.cpp
+
+//(3)
+
+
+int main(int argc, char *argv[]){
+	MinSTACK<int> minstack(10);
+/*
+	minstack.push(10);
+	minstack.push(5);
+	minstack.push(6);
+	minstack.push(9);
+	minstack.push(1);
+
+	cout << minstack.min() << endl;
+	minstack.pop();
+	cout << minstack.min() << endl;
+	minstack.pop();
+	cout << minstack.min() << endl;
+	minstack.pop();
+	cout << minstack.min() << endl;
+	minstack.pop();
+	cout << minstack.min() << endl;
+	minstack.pop();
+	cout << minstack.min() << endl;
+	minstack.pop();
+	*/
+
+}

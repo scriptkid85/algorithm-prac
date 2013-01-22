@@ -1,0 +1,114 @@
+/*
+ * 11.cpp
+ *
+ *  Created on: Jan 20, 2013
+ *      Author: gavin
+ */
+
+
+
+
+#include <iostream>
+#include <stdlib.h>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+//(1)
+void ABsort(int *A, int m, int *B, int n){
+	int sortpoint = m + n - 1;
+	int a = m - 1;
+	int b = n - 1;
+	while(a >= 0 && b >= 0){
+		A[sortpoint --] = (A[a] > B[b])? A[a --] : B[b --];
+	}
+	if(a < 0){
+		while(b >= 0)A[sortpoint --] = B[b --];
+		return;
+	}
+	while(a >= 0)A[sortpoint --] = A[a --];
+	return;
+}
+
+
+//(2) Sometimes, changing the comparator is a good way to solve some special sorting problem.
+//note !!!!: for sort function, the compare(i ,j) function is a bool and return true
+//if i < j, otherwise return false.
+bool stringcomparator(string a, string b){
+	sort(a.begin(), a.end());
+	sort(b.begin(), b.end());
+	return (a.compare(b) < 0)? true : false;
+}
+
+void sortanagrams(vector<string> &a){
+	sort(a.begin(), a.end(), stringcomparator);
+}
+
+
+//(3)
+int findafterrotate(int *a, int target, int l, int r){
+	if(r <= l){
+		if(a[l] == target)return l;
+		else return -1;
+	}
+	int middle = (r + l) / 2;
+	if(a[middle] == target)return middle;
+	if(a[middle] >= a[l] && a[middle] <= a[r]){
+		if(a[middle] > target)return findafterrotate(a, target, l, middle - 1);
+		return findafterrotate(a, target, middle + 1, r);
+	}
+	if(a[middle] < a[l]){
+		if(a[middle] < target && a[r] >= target)return findafterrotate(a, target, middle + 1, r);
+		return findafterrotate(a, target, l, middle - 1);
+	}
+	if(a[middle] > target && a[l] <= target)return findafterrotate(a, target, l, middle - 1);
+	return findafterrotate(a, target, middle + 1, r);
+}
+
+//(5)
+int findinblank(string s[], string target, int l, int r){
+	if(r <= l){
+		if(s[l] == target)return l;
+		return -1;
+	}
+
+	int middle = (r + l) / 2;
+	if(s[middle] == target)return middle;
+	int temp = middle;
+	while(s[--temp] == "");
+	if(s[temp].compare(target) == 0)return temp;
+	if(s[temp].compare(target) > 0)return findinblank(s, target, l, temp - 1);
+	temp = middle;
+	while(s[++temp] == "");
+	if(s[temp].compare(target) == 0)return temp;
+	if(s[temp].compare(target) < 0)return findinblank(s, target, temp + 1, r);
+	return -1;
+}
+
+
+//(6)
+int* findinmatrix(int **a, int rl, int rr, int cl, int cr, int target){
+	int result[2] = {-1, -1};
+	if(rr <= rl && cr <= cl){
+		if(a[rl][cl] == target){
+			result[0] = rl;
+			result[1] = cl;
+		}
+		return result;
+	}
+	int rmiddle, cmiddle;
+
+	rmiddle = (rl + rr) / 2;
+	cmiddle = (cl + cr) / 2;
+	if(a[rmiddle][cmiddle] >= target && a[rl][cl] <= target){
+		int *temp = findinmatrix(a, rl, rmiddle, cl, cmiddle, target);
+		return findinmatrix(a, rl, rmiddle, cl, cmiddle, target);
+	}
+}
+
+
+int main(int argc, char * argv[]){
+	string s[] = {"at", "", "", "", "", "ball", "", "test", "car"};
+	cout << findinblank(s, "car", 0, 8) << endl;
+
+}

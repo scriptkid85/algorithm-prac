@@ -1,0 +1,13 @@
+# From Kai/christos:
+# 	You may use any programming language you want 
+#	as long as it runs on the Andrew linux machines
+#	In that case, please change the makefile accordingly
+
+all:
+		g++ -o fractal fractal.cc
+		./fractal 2
+
+clean:
+	\rm -f *.png output.txt fractal
+
+spotless: clean

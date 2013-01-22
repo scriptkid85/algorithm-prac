@@ -1,0 +1,13 @@
+#include <iostream>
+#include <stdlib.h>
+
+template <class Item>
+	void exch(Item &A, Item &B){
+		Item t = A; A = B; B = t;
+}
+
+template <>
+
+int main(int argc, char *argv[]){
+
+}

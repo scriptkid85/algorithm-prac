@@ -1,0 +1,17 @@
+#include <iostream>
+#include <stdlib.h>
+#include "IncreSTACK.cpp"
+
+using namespace std;
+
+//(1) TRISTACK
+//(2) MinSTACK
+//(3) IncreSTACK
+
+//(4)
+
+int main(int argc, char * argv[]){
+	INCRESTACK<int> stack;
+
+
+}

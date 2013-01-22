@@ -1,0 +1,33 @@
+#include <iostream>
+#include <stdlib.h>
+#include <string>
+
+using namespace std;
+
+//(2)
+string binaryofdouble(double a){
+	if(a >= 1 || a <= 0)return NULL;
+
+	string r;
+	double num = a;
+	while(num > 0){
+		num *= 2;
+		if(num >= 1){
+			r.append("1");
+			num -= 1;
+		}
+		else r.append("0");
+	}
+	return r;
+}
+
+//(3)
+void printnextlargeasamll(int a){
+
+}
+
+//(7) Important and hard!
+
+int main(int argc, char *argv[]){
+	printnextlargeasamll(5);
+}

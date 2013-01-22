@@ -1,0 +1,5 @@
+(5) A easy way to test a tree to be a BST or not:
+    in-order traverse, check the elements visited are non decreasing!
+    
+    
+(6) How to find the next element of target element in the in-order traverse.

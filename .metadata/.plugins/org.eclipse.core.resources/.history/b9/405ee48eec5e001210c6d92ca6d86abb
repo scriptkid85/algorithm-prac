@@ -1,0 +1,9 @@
+template <class Item>
+
+class 3STACK{
+private:
+	Item *s;
+	int top1, base1, top2, base2, top3, base3;
+
+
+};

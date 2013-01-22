@@ -1,0 +1,6 @@
+1) For the addition problem. remember algorithm cannot stop if there is a carry-on even if no arguments.
+
+2) For list problem, the slow runner and fast runner can be used for many subproblems:
+   (1) collision detection
+   (2) length control (slower one will reach the middle when 2*faster one reach the end)
+   (3) find the start point of the loop in the list

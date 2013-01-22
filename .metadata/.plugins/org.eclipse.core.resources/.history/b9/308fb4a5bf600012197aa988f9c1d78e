@@ -1,0 +1,89 @@
+/*
+ * 7.cpp
+ *
+ *  Created on: Jan 17, 2013
+ *      Author: gavin
+ */
+
+
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+//(4)
+int neg(int a){
+	if(a == 0)return 0;
+	int result = 0, i = 0;
+	if(a > 0){
+		while(i < a){
+			result += -1;
+			i ++;
+		}
+	}
+	else {
+		while(i > a){
+			result += 1;
+			i--;
+		}
+	}
+	return result;
+}
+
+int multiply(int a, int b){
+	if(a == 0 || b == 0)return 0;
+
+	int result = 0;
+	int i = 0;
+	if(b >= 0){
+		while (i < b){
+			result += a;
+			i++;
+		}
+	}
+	else {
+		int nega = neg(a);
+		while (i > b){
+			result += nega;
+			i--;
+		}
+	}
+	return result;
+}
+
+double divide(int a, int b){
+	if(b == 0){
+		cout << "error" << endl;
+		return 0;
+	}
+	if(a == 0)return 0;
+	int i = 0, cnt = 0, result = 0, precision = 0;
+	if(multiply(a, b) > 0){
+		while(a != 0){
+			cnt = 0;
+			if(a > 0){
+				while(a >= b){
+					a += neg(b);
+					cnt++;
+				}
+				cnt --;
+				precision++;
+
+				i = 0;
+				while(i < precision)cnt = multiply()
+			}
+			else{
+				while(a <= b){
+					a += neg()
+				}
+			}
+		}
+	}
+}
+
+int main(int argc, char *argv[]){
+	cout << neg(1) << endl;
+	cout << multiply(12, -2) << endl;
+
+}
+

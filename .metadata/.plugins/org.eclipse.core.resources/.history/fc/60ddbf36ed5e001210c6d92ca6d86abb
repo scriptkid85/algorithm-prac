@@ -1,0 +1,14 @@
+template <class Item>
+
+class TriSTACK{
+private:
+	Item *s;
+	int top1, top2, top3;
+
+public:
+	TriSTACK(int maxN){
+		s = new Item(3 * maxN);
+		top1 = base1 =
+	}
+
+};

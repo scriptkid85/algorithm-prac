@@ -1,0 +1,17 @@
+==7602== Invalid read of size 1
+==7602==    at 0x516EAD4: ____strtol_l_internal (strtol_l.c:298)
+==7602==    by 0x516B9DF: atoi (atoi.c:28)
+==7602==    by 0x400BF7: main (sort.cpp:128)
+==7602==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==7602== 
+==7602== 
+==7602== Process terminating with default action of signal 11 (SIGSEGV)
+==7602==  Access not within mapped region at address 0x0
+==7602==    at 0x516EAD4: ____strtol_l_internal (strtol_l.c:298)
+==7602==    by 0x516B9DF: atoi (atoi.c:28)
+==7602==    by 0x400BF7: main (sort.cpp:128)
+==7602==  If you believe this happened as a result of a stack
+==7602==  overflow in your program's main thread (unlikely but
+==7602==  possible), you can try to increase the size of the
+==7602==  main thread stack using the --main-stacksize= flag.
+==7602==  The main thread stack size used in this run was 8388608.

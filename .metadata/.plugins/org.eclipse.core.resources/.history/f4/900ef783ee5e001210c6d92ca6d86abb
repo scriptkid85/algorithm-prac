@@ -1,0 +1,6 @@
+#include <iostream>
+#include <stdlib.h>
+#include <3STACK.cpp>
+
+//(1)
+

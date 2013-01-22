@@ -1,0 +1,84 @@
+/*
+ * 7.cpp
+ *
+ *  Created on: Jan 17, 2013
+ *      Author: gavin
+ */
+
+
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+//(4)
+int neg(int a){
+	if(a == 0)return 0;
+	int result = 0, i = 0;
+	if(a > 0){
+		while(i < a){
+			result += -1;
+			i ++;
+		}
+	}
+	else {
+		while(i > a){
+			result += 1;
+			i--;
+		}
+	}
+	return result;
+}
+
+int multiply(int a, int b){
+	if(a == 0 || b == 0)return 0;
+
+	int result = 0;
+	int i = 0;
+	if(b >= 0){
+		while (i < b){
+			result += a;
+			i++;
+		}
+	}
+	else {
+		int nega = neg(a);
+		while (i > b){
+			result += nega;
+			i--;
+		}
+	}
+	return result;
+}
+
+
+
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        if(s.length() < 2)return s.length();
+
+        map<char, int> save;
+        int maxlength = 0, start = 0, templength = 1;
+        save[s[0]] = 0;
+
+        for(int i = 1; i < s.length(); i ++){
+        	if(save.find(s[i]) == save.end()){
+        		save[s[i]] = i;
+        		templength ++;
+        	}
+        	else {
+        		save.find(s[i]) -> second
+        	}
+        }
+    }
+};
+
+int main(int argc, char *argv[]){
+	cout << neg(1) << endl;
+	cout << multiply(12, -2) << endl;
+
+}
+

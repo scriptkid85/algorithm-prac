@@ -1,0 +1,6 @@
+#include <iostream>
+#include <stdlib.h>
+
+//(1)
+template <class Item>
+

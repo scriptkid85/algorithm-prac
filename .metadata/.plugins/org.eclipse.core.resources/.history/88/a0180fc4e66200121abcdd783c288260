@@ -1,0 +1,24 @@
+/*
+ * test.cpp
+ *
+ *  Created on: Jan 20, 2013
+ *      Author: gavin
+ */
+
+
+
+
+#include <iostream>
+
+#include <stdlib.h>
+#include <tr1/unordered_map>
+
+using namespace std;
+
+int main(int argc, char *argv[]){
+	tr1::unordered_map<int, int> test;
+	if(test.find(10) != test.end()){
+		cout << "find" << endl;
+	}
+	else cout << "cannot find" << endl;
+}

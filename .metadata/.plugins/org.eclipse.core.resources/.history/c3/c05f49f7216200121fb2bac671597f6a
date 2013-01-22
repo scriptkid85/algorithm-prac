@@ -1,0 +1,2 @@
+(3) the magic index: note that if the elements are non-distinct, then the binary search idea need to be considered carefully, 
+	since then the array cannot be cut half!

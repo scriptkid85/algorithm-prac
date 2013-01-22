@@ -1,0 +1,5 @@
+(2) For some special sorting problem which has a special ordering rule, changing the comparator
+	is a good way to solve it.
+	
+	note !!!!: for "sort" function, the comparator(i ,j) function is a bool and return true
+	if i < j, otherwise return false.
