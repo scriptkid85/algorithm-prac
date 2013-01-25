@@ -1,0 +1,30 @@
+
+virtual function:
+
+if the destructor function is a virtual function, 
+say Person class has virtual ~Person. Student:Person has ~Student. Then if Student(or Person) *p = new Student(); delete p;
+the compiler will call ~Student first and then ~Person to make sure delete the memory for student and person
+
+
+Why the base class's destructor have to be declared as a virtual function?
+If the parent class foo's destructor method is not virtual, then its derived class bar:foo can be used like
+  foo *f = new bar();
+  now, if you delete f, then foo's destructor will be called, however, there are some memory and sources are used by the 
+  derived class which can not be cleaned up in this way. So define the base class's destructor as virtual can ensure that
+  the destructor for the most derived class will also be called
+  
+  Note: if Person is the base class, Student is the derived class from Person and goodStudent is the derived class from Student,
+  then if Person's destructor is virtual (not Student's). Then if Person *p = new goodStudent(); delete p;
+  (1)call goodStudent's destructor (2)call student's  (3) call person's
+
+
+default values:
+int func(int a, int b = 3) Note: all default values must be on the right side of the function declarations.
+
+
+fill_n(array, size, value) can be used to initialize arrays;
+
+
+
+(9) aligned_malloc 
+	malloc is easy, just need to use the original malloced address p as (p + alignment - 1) & 11111000 (if alignment is 16, or say & ~(alignment - 1))

@@ -1,0 +1,2 @@
+(3) how to count the trailing zeros of the n factorial?
+    (a) Find out the n factorial first and then count the number of trailing zeros.

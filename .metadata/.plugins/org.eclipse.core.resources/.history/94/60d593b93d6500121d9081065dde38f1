@@ -1,0 +1,18 @@
+
+virtual function:
+
+if the destructor function is a virtual function, 
+say Person class has virtual ~Person. Student:Person has ~Student. Then if Student(or Person) *p = new Student(); delete p;
+the compiler will call ~Student first and then ~Person to make sure delete the memory for student and person
+
+
+Why the base class's destructor have to be declared as a virtual function?
+If the parent class foo's destructor method is not virtual, then its derived class bar:foo can be used like
+  foo *f = new bar();
+  now, if you delete f, then foo's destructor will be called, however, there are some memory and sources are used by the 
+  derived class which can not be cleaned up in this way. So define the base class's destructor as virtual can ensure that
+  the destructor for the most derived class will also be called
+
+
+default values:
+int func(int a, int b = 3) Note: all default values must be on the right side of the function declarations.

@@ -1,0 +1,16 @@
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****

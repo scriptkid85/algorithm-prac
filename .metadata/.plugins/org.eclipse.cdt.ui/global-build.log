@@ -1,53 +1,625 @@
 
-**** Build of configuration Debug for project Chapter11 ****
+**** Build of configuration Debug for project Chapter17 ****
 
 make all 
-Building file: ../sources/11.cpp
+Building file: ../sources/17.cpp
 Invoking: Cross G++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/11.d" -MT"sources/11.d" -o "sources/11.o" "../sources/11.cpp"
-../sources/11.cpp: In function ‘int* findinmatrix(int**, int, int, int, int, int)’:
-../sources/11.cpp:91:6: warning: address of local variable ‘result’ returned [enabled by default]
-../sources/11.cpp:91:6: warning: address of local variable ‘result’ returned [enabled by default]
-../sources/11.cpp: In function ‘void createtower(int, std::vector<int*>, std::vector<int*>*)’:
-../sources/11.cpp:136:31: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-../sources/11.cpp: In function ‘std::vector<int*> createtower(std::vector<int*>)’:
-../sources/11.cpp:157:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-Finished building: ../sources/11.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
  
-Building target: Chapter11
+Building target: Chapter17
 Invoking: Cross G++ Linker
-g++  -o "Chapter11"  ./sources/11.o   
-Finished building target: Chapter11
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
  
 
 **** Build Finished ****
 
-**** Build of configuration Debug for project Chapter11 ****
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
 
 make all 
 make: Nothing to be done for `all'.
 
 **** Build Finished ****
 
-**** Build of configuration Debug for project Chapter11 ****
+**** Build of configuration Debug for project Chapter17 ****
 
 make all 
-Building file: ../sources/11.cpp
+Building file: ../sources/17.cpp
 Invoking: Cross G++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/11.d" -MT"sources/11.d" -o "sources/11.o" "../sources/11.cpp"
-../sources/11.cpp: In function ‘int* findinmatrix(int**, int, int, int, int, int)’:
-../sources/11.cpp:91:6: warning: address of local variable ‘result’ returned [enabled by default]
-../sources/11.cpp:91:6: warning: address of local variable ‘result’ returned [enabled by default]
-../sources/11.cpp: In function ‘void createtower(int, std::vector<int*>, std::vector<int*>*)’:
-../sources/11.cpp:136:31: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-../sources/11.cpp: In function ‘std::vector<int*> createtower(std::vector<int*>)’:
-../sources/11.cpp:157:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-Finished building: ../sources/11.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
  
-Building target: Chapter11
+Building target: Chapter17
 Invoking: Cross G++ Linker
-g++  -o "Chapter11"  ./sources/11.o   
-Finished building target: Chapter11
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+make: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+make: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+make: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+../sources/17.cpp: In function ‘std::string InttoStr(int)’:
+../sources/17.cpp:176:1: warning: control reaches end of non-void function [-Wreturn-type]
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+../sources/17.cpp: In function ‘std::string InttoStr(int)’:
+../sources/17.cpp:176:1: warning: control reaches end of non-void function [-Wreturn-type]
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+../sources/17.cpp: In function ‘std::string InttoStr(int)’:
+../sources/17.cpp:176:1: warning: control reaches end of non-void function [-Wreturn-type]
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+../sources/17.cpp: In function ‘std::string InttoStr(int)’:
+../sources/17.cpp:181:2: error: duplicate case value
+../sources/17.cpp:161:2: error: previously used here
+../sources/17.cpp:183:2: error: duplicate case value
+../sources/17.cpp:163:2: error: previously used here
+../sources/17.cpp:185:2: error: duplicate case value
+../sources/17.cpp:165:2: error: previously used here
+../sources/17.cpp:187:2: error: duplicate case value
+../sources/17.cpp:167:2: error: previously used here
+../sources/17.cpp:189:2: error: duplicate case value
+../sources/17.cpp:169:2: error: previously used here
+../sources/17.cpp:191:2: error: duplicate case value
+../sources/17.cpp:171:2: error: previously used here
+../sources/17.cpp:193:2: error: duplicate case value
+../sources/17.cpp:173:2: error: previously used here
+../sources/17.cpp: In function ‘std::string BasetoStr(int)’:
+../sources/17.cpp:237:1: warning: no return statement in function returning non-void [-Wreturn-type]
+../sources/17.cpp: In function ‘void printinteger(int)’:
+../sources/17.cpp:243:6: warning: unused variable ‘base’ [-Wunused-variable]
+make: *** [sources/17.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+../sources/17.cpp: In function ‘std::string BasetoStr(int)’:
+../sources/17.cpp:237:1: warning: no return statement in function returning non-void [-Wreturn-type]
+../sources/17.cpp: In function ‘void printinteger(int)’:
+../sources/17.cpp:243:6: warning: unused variable ‘base’ [-Wunused-variable]
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+../sources/17.cpp: In function ‘void printinteger(int)’:
+../sources/17.cpp:243:6: warning: unused variable ‘base’ [-Wunused-variable]
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+../sources/17.cpp: In function ‘void printinteger(int)’:
+../sources/17.cpp:244:6: warning: unused variable ‘base’ [-Wunused-variable]
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+../sources/17.cpp: In function ‘void printinteger(int)’:
+../sources/17.cpp:244:6: warning: unused variable ‘base’ [-Wunused-variable]
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+../sources/17.cpp: In function ‘void printinteger(int)’:
+../sources/17.cpp:244:6: warning: unused variable ‘base’ [-Wunused-variable]
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+../sources/17.cpp: In function ‘void largestsum(int*, int)’:
+../sources/17.cpp:266:1: error: expected unqualified-id before ‘}’ token
+../sources/17.cpp:264:6: warning: unused variable ‘startpoint’ [-Wunused-variable]
+make: *** [sources/17.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+../sources/17.cpp: In function ‘void largestsum(int*, int)’:
+../sources/17.cpp:264:6: warning: unused variable ‘startpoint’ [-Wunused-variable]
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+../sources/17.cpp: In function ‘void largestsum(int*, int)’:
+../sources/17.cpp:264:6: warning: unused variable ‘startpoint’ [-Wunused-variable]
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+../sources/17.cpp: In function ‘void largestsum(int*, int)’:
+../sources/17.cpp:264:6: warning: unused variable ‘startpoint’ [-Wunused-variable]
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+../sources/17.cpp: In function ‘int main()’:
+../sources/17.cpp:284:32: error: scalar object ‘a’ requires one element in initializer
+make: *** [sources/17.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+make: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Chapter17 ****
+
+make all 
+Building file: ../sources/17.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sources/17.d" -MT"sources/17.d" -o "sources/17.o" "../sources/17.cpp"
+Finished building: ../sources/17.cpp
+ 
+Building target: Chapter17
+Invoking: Cross G++ Linker
+g++  -o "Chapter17"  ./sources/17.o   
+Finished building target: Chapter17
  
 
 **** Build Finished ****
