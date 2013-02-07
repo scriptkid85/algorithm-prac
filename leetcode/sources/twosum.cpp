@@ -3,6 +3,8 @@
 #include <vector>
 #include <map>
 #include <math.h>
+#include <stack>
+#include <climits>
 
 using namespace std;
 
@@ -184,10 +186,119 @@ ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
     return head;
 }
 
+int computearea(int righttopi, int rightopj, int leftbottomi, int leftbottomj){
+	return (righttopi + 1 - leftbottomi) * (leftbottomj + 1 - leftbottomi);
+}
+
+int LargestOneRect(int **a, int m, int n){
+
+}
+
+bool isPalindrome(string s) {
+    // Start typing your C/C++ solution below
+    // DO NOT write int main() function
+    stack<char> save;
+    stack<char> test;
+    int cnt = 0;
+    int i = 0;
+    while(i < s.length()){
+        if((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= '0' && s[i] <= '9')){
+            save.push(s[i]);
+        }
+        else if( s[i] >= 'A' && s[i] <= 'Z'){
+            save.push(s[i] + 32);
+        }
+        i++;
+    }
+    cnt = save.size();
+
+    int half = cnt/2;
+    int odd = cnt%2;
+
+    i = 1;
+    while(i++ <= half){
+        test.push(save.top());
+        save.pop();
+    }
+    if(odd == 1){
+        save.pop();
+    }
+    while(save.size() != 0){
+        if(save.top() != test.top())
+            return false;
+        save.pop();
+        test.pop();
+    }
+    return true;
+ }
+
+//(Binary Tree Maximum Path Sum)
+ struct TreeNode {
+     int val;
+     TreeNode *left;
+     TreeNode *right;
+     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ };
+
+int findmax(TreeNode *root, int &max){
+    int a = root -> val;
+    int b = root ->val;
+    int temp;
+    int tempmax = root->val;
+    if(root -> left != NULL){
+        temp = findmax(root -> left, max);
+        tempmax += (temp > 0? temp:0);
+        a += (temp > 0? temp:0);
+    }
+    if(root -> right != NULL){
+        temp = findmax(root -> right, max);
+        tempmax += (temp > 0? temp:0);
+        b += (temp > 0? temp:0);
+    }
+
+    if(tempmax > max)max = tempmax;
+    return a>=b?a:b;
+}
+
+int maxPathSum(TreeNode *root) {
+    int max = INT_MIN;
+    findmax(root, max);
+    return max;
+}
+
+
+
+//max profit (Very GOOD DP PROBLEM)
+
+int maxProfit(vector<int> &prices) {
+// Start typing your C/C++ solution below
+// DO NOT write int main() function
+
+    int size = prices.size();
+
+    if(size < 2) return 0;
+    int dp1[size], dp2[size];
+	int minv = prices[0];
+	dp1[0] = 0;
+	for(int i = 1; i < size; i++){
+		minv = min(minv, prices[i]);
+		dp1[i] = max(prices[i] - minv, dp1[i - 1]);
+	}
+
+	dp2[size - 1] = 0;
+	int maxv = prices[size - 1];
+	for(int i = size - 2; i >=0; i--){
+		maxv = max(prices[i], maxv);
+		dp2[i] = max(dp2[i + 1], maxv - prices[i]);
+	}
+
+	maxv = 0;
+	for(int i = 1; i < size; i++){
+		maxv = max(maxv, dp1[i] + dp2[i]);
+	}
+	return maxv;
+}
 
 int main(int argc, char *argv[]){
-	ListNode *a = new ListNode(5);
-	ListNode *b = new ListNode(5);
 
-	cout << addTwoNumbers(a, b)->val << endl;
 }

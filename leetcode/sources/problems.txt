@@ -1,6 +1,6 @@
-Valid Palindrome
-Binary Tree Maximum Path SumNov 8 '12
-Best Time to Buy and Sell Stock IIINov 7 '12
+Valid Palindrome															pass(stack.pop() cannot return anything, its void method, use .top())
+Binary Tree Maximum Path SumNov 8 '12                                       pass (remember if the method A(int &max){..}, for real use, just need use A(max) and the max can be viewed as a global var.
+Best Time to Buy and Sell Stock IIINov 7 '12					!!!!!		PASS (DP classical problem, how to put dp idea into two related task!!, using two dp!!!)
 Best Time to Buy and Sell Stock IIOct 31 '12
 Best Time to Buy and Sell StockOct 30 '12
 TriangleOct 30 '12
