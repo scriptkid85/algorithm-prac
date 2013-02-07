@@ -1,3 +1,0 @@
-(1) to implement - * / just use +, you have first to use -1 to construct a neg() function
-
-(4) integer division will floor the result if the true result is double type

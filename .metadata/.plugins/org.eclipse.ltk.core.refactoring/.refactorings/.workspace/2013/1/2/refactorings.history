@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;ADTQueue/sources/QUEUE2&apos;" deleteContents="false" description="Delete resource &apos;ADTQueue/sources/QUEUE2&apos;" element1="/ADTQueue/sources/QUEUE2" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1357744996702"/>&#x0A;<refactoring comment="Delete resource &apos;Allsort&apos;" deleteContents="true" description="Delete resource &apos;Allsort&apos;" element1="/Allsort" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1357974128808"/>
-</session>

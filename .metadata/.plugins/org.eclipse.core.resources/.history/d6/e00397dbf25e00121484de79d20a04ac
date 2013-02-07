@@ -1,4 +1,0 @@
-#include <iostream>
-#include <stdlib.h>
-#include "TRISTACK.cpp"
-#include "MinSTACK.cpp"

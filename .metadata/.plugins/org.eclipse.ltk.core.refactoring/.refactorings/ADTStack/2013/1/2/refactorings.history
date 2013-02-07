@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;ADTStack/sources/stack.cpp&apos; to &apos;STACK.cpp&apos;" description="Rename resource &apos;stack.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="sources/stack.cpp" name="STACK.cpp" stamp="1357719788702" updateReferences="true"/>
-</session>
