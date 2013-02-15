@@ -1,24 +1,24 @@
 Valid Palindrome															pass(stack.pop() cannot return anything, its void method, use .top())
 Binary Tree Maximum Path SumNov 8 '12                                       pass (remember if the method A(int &max){..}, for real use, just need use A(max) and the max can be viewed as a global var.
-Best Time to Buy and Sell Stock IIINov 7 '12					!!!!!		PASS (DP classical problem, how to put dp idea into two related task!!, using two dp!!!)
-Best Time to Buy and Sell Stock IIOct 31 '12
-Best Time to Buy and Sell StockOct 30 '12
-TriangleOct 30 '12
-Pascal's Triangle IIOct 29 '12
-Pascal's TriangleOct 28 '12
-Populating Next Right Pointers in Each Node IIOct 28 '12
-Populating Next Right Pointers in Each NodeOct 28 '12
+Best Time to Buy and Sell Stock IIINov 7 '12					!!!!!		PASS (DP classical advanced problem, how to put dp idea into two related task!!, using two dp!!!)
+Best Time to Buy and Sell Stock IIOct 31 '12								Pass (as many as possible, then any time you can make money, do it!)
+Best Time to Buy and Sell StockOct 30 '12                                   pass (dp basic problem)
+TriangleOct 30 '12															pass (typical dp problem)
+Pascal's Triangle IIOct 29 '12												pass
+Pascal's TriangleOct 28 '12													pass
+Populating Next Right Pointers in Each Node IIOct 28 '12        !!!!!       PASS (very important! CLEAN CODE!!!)
+Populating Next Right Pointers in Each NodeOct 28 '12                       pass
 Distinct SubsequencesOct 19 '12
-Flatten Binary Tree to Linked ListOct 14 '12
-Path Sum IIOct 14 '12
-Path SumOct 14 '12
-Minimum Depth of Binary TreeOct 10 '12
-Balanced Binary TreeOct 9 '12
-Convert Sorted List to Binary Search TreeOct 3 '12
-Convert Sorted Array to Binary Search TreeOct 2 '12
-Binary Tree Level Order Traversal IIOct 1 '12
-Construct Binary Tree from Inorder and Postorder TraversalSep 30 '12
-Construct Binary Tree from Preorder and Inorder TraversalSep 30 '12
+Flatten Binary Tree to Linked ListOct 14 '12								pass (recursive !in-place!, so just can change pointers)
+Path Sum IIOct 14 '12														pass (use & for replacing the global variable)
+Path SumOct 14 '12															pass
+Minimum Depth of Binary TreeOct 10 '12										pass
+Balanced Binary TreeOct 9 '12												pass (Remember the Definition of balanced binary tree)
+Convert Sorted List to Binary Search TreeOct 3 '12			   !!!!!!!!		pass (VERY GOOD, HOW TO CONSTRUCT A TREE BOTTOM-TOP!!according to a link's order!)	
+Convert Sorted Array to Binary Search TreeOct 2 '12							pass
+Binary Tree Level Order Traversal IIOct 1 '12								pass
+Construct Binary Tree from Inorder and Postorder TraversalSep 30 '12		pass (basic but important to make clear the logic! Note!!!! the range of the postorder should be careful)
+Construct Binary Tree from Preorder and Inorder TraversalSep 30 '12			pass (like above)
 Maximum Depth of Binary TreeSep 30 '12
 Binary Tree Zigzag Level Order TraversalSep 29 '12
 Binary Tree Level Order TraversalSep 29 '12
