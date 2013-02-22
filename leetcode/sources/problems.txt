@@ -19,19 +19,20 @@ Convert Sorted Array to Binary Search TreeOct 2 '12							pass
 Binary Tree Level Order Traversal IIOct 1 '12								pass
 Construct Binary Tree from Inorder and Postorder TraversalSep 30 '12		pass (basic but important to make clear the logic! Note!!!! the range of the postorder should be careful)
 Construct Binary Tree from Preorder and Inorder TraversalSep 30 '12			pass (like above)
-Maximum Depth of Binary TreeSep 30 '12
-Binary Tree Zigzag Level Order TraversalSep 29 '12
-Binary Tree Level Order TraversalSep 29 '12
-Symmetric TreeSep 24 '12
-Same TreeSep 3 '12
-Recover Binary Search TreeSep 1 '12
-Validate Binary Search TreeAug 31 '12
-Interleaving StringAug 31 '12
-Unique Binary Search Trees IIAug 27 '12
-Unique Binary Search TreesAug 27 '12
-Binary Tree Inorder TraversalAug 27 '12
-Restore IP AddressesAug 8 '12
-Reverse Linked List IIJun 27 '12
+Maximum Depth of Binary TreeSep 30 '12										pass
+Binary Tree Zigzag Level Order TraversalSep 29 '12							pass (Two stack can help to reduce the time to just N, i.e. zigzag when saving)
+Binary Tree Level Order TraversalSep 29 '1									pass
+Symmetric TreeSep 24 '12													pass
+Same TreeSep 3 '12															pass
+Recover Binary Search TreeSep 1 '12							 !!!!			pass (No need to change node, but change val of node!!, O(1) space!!!!)
+															O(1) space
+Validate Binary Search TreeAug 31 '12										pass (Use inorder traverse output to check!)			
+Interleaving StringAug 31 '12			                     !!!!!!			pass (Classic 2D DP problem)						
+Unique Binary Search Trees IIAug 27 '12						!!!!			pass (How to save results in recursive algorithms)
+Unique Binary Search TreesAug 27 '12										pass (mostly, recursive algorithm can be accelerated by DP)
+Binary Tree Inorder TraversalAug 27 '12										pass
+Restore IP AddressesAug 8 '12												pass (consider carefully about what valid ip is!!! 01.1.1.1 is not!)
+Reverse Linked List IIJun 27 '12							!!!!	  		pass (clean code!)
 Subsets IIJun 25 '12
 Decode WaysJun 25 '12
 Gray CodeMay 20 '12
@@ -54,7 +55,7 @@ Set Matrix ZeroesApr 6 '12
 Edit DistanceApr 4 '12
 Simplify PathApr 4 '12
 Climbing StairsApr 3 '12
-Sqrt(x)Apr 3 '12
+Sqrt(x)Apr 3 '12															pass (Newton Method, can be used to solve cuberoot(x))
 Text JustificationApr 3 '12
 Plus OneApr 2 '12
 Valid NumberApr 2 '12

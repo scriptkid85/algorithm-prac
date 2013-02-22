@@ -5,6 +5,7 @@
 #include <math.h>
 #include <stack>
 #include <climits>
+#include <algorithm>
 
 using namespace std;
 
@@ -811,6 +812,385 @@ TreeNode *buildTreefromPI(vector<int> &preorder, vector<int> &inorder) {
     }
     return createBSTfromPI(inposition, preorder, inorder, 0, size - 1, 0, size -1);
 }
+
+
+
+
+//Maximum Depth of Binary Tree
+int maxDepth(TreeNode *root) {
+    // Start typing your C/C++ solution below
+    // DO NOT write int main() function
+    if(!root)return 0;
+
+    int ld = 1 + maxDepth(root -> left);
+    int rd = 1 + maxDepth(root -> right);
+
+    return ld>rd?ld:rd;
+}
+
+
+
+
+
+//Binary Tree Zigzag Level Order Traversal
+void addLevel(TreeNode *root, vector<vector<int> > &result, int count){
+    if(!root)return;
+    if(result.size() <= count){
+        vector<int> tempvec;
+        tempvec.push_back(root -> val);
+        result.push_back(tempvec);
+    }
+    else{
+        result[count].push_back(root -> val);
+    }
+    addLevel(root -> left, result, count + 1);
+    addLevel(root -> right, result, count + 1);
+}
+vector<vector<int> > zigzagLevelOrder(TreeNode *root) {
+    // Start typing your C/C++ solution below
+    // DO NOT write int main() function
+     vector<vector<int> > result;
+     addLevel(root, result, 0);
+     for(int i = 0; i < result.size(); i ++){
+         if(i % 2 == 0)continue;
+         for(int g = 0, h = result[i].size() - 1; g < h; g++, h--){
+             int temp = result[i][g];
+             result[i][g] = result[i][h];
+             result[i][h] = temp;
+         }
+     }
+     return result;
+}
+
+
+
+
+
+//Binary Tree Level Order Traversal
+    void addLayer(TreeNode *root, vector<vector<int> > &result, int count){
+        if(!root)return;
+        if(result.size() <= count){
+            vector<int> newlayer;
+            newlayer.push_back(root -> val);
+            result.push_back(newlayer);
+        }
+        else{
+            result[count].push_back(root -> val);
+        }
+        addLayer(root->left, result, count + 1);
+        addLayer(root -> right, result, count + 1);
+    }
+
+    vector<vector<int> > levelOrder(TreeNode *root) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        vector<vector<int> > result;
+        addLayer(root, result, 0);
+        return result;
+    }
+
+
+
+
+
+
+//Symmetric Tree
+    bool myCheckSymmetric(TreeNode *leftroot, TreeNode *rightroot){
+        if((!leftroot) || (!rightroot)){
+            if((!leftroot) && (!rightroot))return true;
+            return false;
+        }
+        return (leftroot->val == rightroot->val) && myCheckSymmetric(leftroot->left, rightroot->right) &&  myCheckSymmetric(leftroot->right, rightroot->left);
+    }
+
+
+    bool isSymmetric(TreeNode *root) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        return myCheckSymmetric(root, root);
+    }
+
+
+
+
+
+
+
+//Same Tree
+    bool myCheckSameTree(TreeNode *p, TreeNode *q){
+        if((!p) || (!q)){
+            if((!p) && (!q))return true;
+            return false;
+        }
+
+        return (p->val == q->val) && myCheckSameTree(p->left, q->left) && myCheckSameTree(p->right, q->right);
+    }
+
+    bool isSameTree(TreeNode *p, TreeNode *q) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        return myCheckSameTree(p, q);
+    }
+
+
+
+
+
+//Recover Binary Search Tree
+//O(n) space, not good, but easy to
+void inOrderTraverse(TreeNode* &root, vector<TreeNode *> &inorder, vector<int> &inorderval){
+    if(!root)return;
+    inOrderTraverse(root -> left, inorder, inorderval);
+    inorder.push_back(root);
+    inorderval.push_back(root->val);
+    inOrderTraverse(root -> right, inorder, inorderval);
+}
+
+void recoverTree(TreeNode *root) {
+    // Start typing your C/C++ solution below
+    // DO NOT write int main() function
+    vector<TreeNode *> inorder;
+    vector<int> inorderval;
+    inOrderTraverse(root, inorder, inorderval);
+    sort(inorderval.begin(), inorderval.end());
+
+    for(int i = 0; i < inorderval.size(); i++){
+        inorder[i]->val = inorderval[i];
+    }
+}
+
+//O(1) space!
+
+
+
+
+
+
+//Validate Binary Search Tree
+bool compareInorder(TreeNode* root, int &pre){
+    if(!root){
+        return true;
+    }
+    bool leftcheck = compareInorder(root->left, pre);
+    if(pre == -100000){
+        pre = root -> val;
+        //NOTE HERE： easy to forget about this check!!!
+        return compareInorder(root->right, pre);
+    }
+    bool middlecheck = (root -> val > pre);
+    pre = root -> val;
+    bool rightcheck = compareInorder(root->right, pre);
+    return leftcheck && middlecheck && rightcheck;
+}
+bool isValidBST(TreeNode *root) {
+    // Start typing your C/C++ solution below
+    // DO NOT write int main() function
+    int pre = -100000;
+    return compareInorder(root, pre);
+}
+
+
+
+
+
+//Interleaving String
+bool isInterleave(string s1, string s2, string s3) {
+	// Start typing your C/C++ solution below
+	// DO NOT write int main() function
+	int size1 = s1.length();
+	int size2 = s2.length();
+	int size3 = s3.length();
+	if(size1 + size2 != size3) return false;
+	vector<vector<bool> > dp2d(size1 + 1, vector<bool>(size2 + 1));
+	dp2d[0][0] = true;
+
+	for(int i = 1; i < size1 + 1; i++){
+		if(dp2d[i - 1][0] && (s1[i - 1] == s3[i - 1])){
+			dp2d[i][0] = true;
+		}
+		else dp2d[i][0] = false;
+	}
+
+	for(int i = 1; i < size2 + 1; i++){
+		if(dp2d[0][i - 1] && (s2[i - 1] == s3[i - 1])){
+			dp2d[0][i] = true;
+		}
+		else dp2d[0][i] = false;
+	}
+
+	for(int i = 1; i < size1 + 1; i++){
+		for(int j = 1; j < size2 + 1; j++){
+			if((dp2d[i - 1][j] && (s1[i - 1] == s3[i + j - 1])) || ((dp2d[i][j - 1] && (s2[j - 1] == s3[i + j - 1]))))
+				dp2d[i][j] = true;
+			else dp2d[i][j] = false;
+		}
+	}
+	return dp2d[size1][size2];
+}
+
+
+
+
+//Unique Binary Search Trees
+// all recursive method can be considered for DP(if extra space is allowed), much faster!!
+    int record[1000] = {0};
+    int numTrees(int n) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        if(n == 0)return 1;
+        if(n == 1)return 1;
+        if(record[n])return record[n];
+        int sum = 0;
+        for(int i = 1; i <= n; i++){
+            sum += numTrees(i - 1)*numTrees(n - i);
+        }
+        record[n] = sum;
+        return sum;
+    }
+
+
+
+
+
+//Unique Binary Search Trees II
+    vector<TreeNode *> generateTrees(int n) {
+        vector<TreeNode*> ret;
+        DFSgenTrees(ret, 1, n);
+        return ret;
+    }
+    void DFSgenTrees(vector<TreeNode *> &ret, int l, int r){
+        if(l > r)
+            ret.push_back(NULL); // very important, cannot forget!!, since the left and right child can be NULL
+        for(int i = l; i <= r; i++){
+            vector<TreeNode *> leftsubtrees;
+            vector<TreeNode *> rightsubtrees;
+            DFSgenTrees(leftsubtrees, l, i - 1);
+            DFSgenTrees(rightsubtrees, i + 1, r);
+
+            for(int x = 0; x < leftsubtrees.size(); x++){
+                for(int y = 0; y < rightsubtrees.size(); y++){
+                    TreeNode *root = new TreeNode(i);
+                    root->left = leftsubtrees[x];
+                    root->right = rightsubtrees[y];
+                    ret.push_back(root);
+                }
+            }
+        }
+    }
+
+
+
+
+//Binary Tree Inorder Traversal
+    void saveinorderTraversal(vector<int> &ret, TreeNode *root){
+        if(!root)return;
+        saveinorderTraversal(ret, root->left);
+        ret.push_back(root->val);
+        saveinorderTraversal(ret, root->right);
+    }
+
+    vector<int> inorderTraversal(TreeNode *root) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        vector<int> ret;
+        saveinorderTraversal(ret, root);
+        return ret;
+    }
+
+
+
+
+
+//Restore IP Addresses
+    bool checkvalidip(string ip){ //consider carefully about valid ip!
+        int i = 0;
+        if(ip.length() == 1)return true;
+        while(ip[i] == '0'&& ip[i] != '\0')i++;
+        if(i > 0)return false;
+        if(atoi(ip.c_str()) > 255)return false;
+        return true;
+    }
+    void restoreIp(vector<string> &ret, string s, string ip, int count){
+        if(count == 5){
+            if(s.length() == 0){
+                ip = ip.substr(0, ip.length() - 1);
+                ret.push_back(ip);
+            }
+            return;
+        }
+        if(s.length() == 0)return;
+        for(int i = 1; i <= min(3, (int)s.length()); i++){
+            string tempip = ip;
+            string temp = s;
+            string substring = temp.substr(0, i);
+            if(!checkvalidip(substring))continue;
+            tempip = tempip + substring + ".";
+            temp = temp.substr(i, temp.length() - i);
+            restoreIp(ret, temp, tempip, count + 1);
+        }
+    }
+    vector<string> restoreIpAddresses(string s) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        vector<string> ret;
+        string ip = "";
+        restoreIp(ret, s, ip, 1);
+        return ret;
+    }
+
+
+
+
+
+//Reverse Linked List II    (how to make it more clean and easy to understand!!)
+    ListNode *reverseBetween(ListNode *head, int m, int n) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+    	if(m == n)return head;
+        ListNode *fakenode = new ListNode(0);
+        fakenode->next = head;
+
+        ListNode *pre = fakenode, *cur = head, *nex = head -> next, *temp;
+        int count = 1;
+        while(1){
+            if(count >= m && count < n){
+                temp = nex -> next;
+                nex->next = cur;
+                cur = nex;
+                nex = temp;
+            }
+            else if(count < m){
+                pre = cur;
+                cur = cur -> next;
+                nex = cur -> next;
+            }
+            else if(count >= n){
+                break;
+            }
+            count++;
+        }
+        pre->next->next = nex;
+        pre->next = cur;
+        return fakenode->next;
+    }
+
+
+
+
+
+
+//Sqrt(x)
+//Newton Method! f(x) = x^2 - c, c is the input number. Find x such that f(x) = 0
+    int sqrt(int x) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        double y, z(1.0);
+        while(int(y) - int(z)){
+            y = z;
+            z = x / 2.0 / y + y / 2;
+        }
+        return int(y);
+    }
 
 
 
