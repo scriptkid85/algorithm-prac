@@ -6,6 +6,7 @@
 #include <stack>
 #include <climits>
 #include <algorithm>
+#include <string.h>
 
 using namespace std;
 
@@ -1191,6 +1192,235 @@ bool isInterleave(string s1, string s2, string s3) {
         }
         return int(y);
     }
+
+
+
+    //Longest Palindromic Substring
+        string preProcess(string s){
+            if(s.length() == 0)return "^&";
+            string ret = "^";
+            for(int i = 0; i < s.length(); i++){
+                ret += ("#" + s.substr(i, 1));
+            }
+            ret += "#&";
+            return ret;
+        }
+
+        string longestPalindrome(string s) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            string T = preProcess(s);
+            int length = T.length();
+            int *p = new int[length];
+            int center = 0, edge = 0;
+            int maxlength = 0;
+            int maxcenter = 0;
+
+            for(int i = 1; i < length - 1; i ++){
+                int mirror = 2 * center - i;
+                if(edge > i)p[i] = min(edge - i, p[mirror]);
+                else p[i] = 0;
+                while(T[i - 1 - p[i]] == T[i + 1 + p[i]])p[i] ++;
+
+                if(i + p[i] > edge){
+                    center = i;
+                    edge = i + p[i];
+                }
+
+                if(p[i] > maxlength){
+                    maxlength = p[i];
+                    maxcenter = i;
+                }
+
+            }
+
+            delete[] p;
+            return s.substr((maxcenter - 1 - maxlength) / 2, maxlength);
+        }
+
+
+
+    //ZigZag Conversion
+        string convert(string s, int nRows) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            if(nRows == 1)return s;
+            int i = 0;
+            string ret = "";
+            while(i < s.length()){
+                ret += s.substr(i, 1);
+                i += 2 * nRows - 2;
+            }
+
+            for(int j = 1; j < nRows - 1; j ++){
+                i = j;
+                while(i < s.length()){
+                    ret += s.substr(i, 1);
+                    i += 2 * nRows - 2 * (j + 1);
+                    if(i >= s.length())break;
+                    ret += s.substr(i, 1);
+                    i += 2 * j;
+                }
+            }
+
+            if(nRows < 2)return ret;
+            i = nRows - 1;
+            while(i < s.length()){
+                ret += s.substr(i, 1);
+                i += 2 * nRows - 2;
+            }
+            return ret;
+        }
+
+
+
+    //Reverse Integer (consider some other problems: overflow; 10000 -> 1)
+        int reverse(int x) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            int digit = 0;
+            int ret = 0;
+
+            int zx = abs(x);
+            while(zx >= 10){
+                digit = zx % 10;
+                zx /= 10;
+                ret = ret*10 + digit;
+            }
+            ret = ret*10 + zx;
+            return (x >= 0) ? ret : -1 * ret;
+        }
+
+
+    //String to Integer (atoi)   (take care of the overflow!!)
+        int atoi(const char *str) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            if(str == NULL || strlen(str) == 0)return 0;
+            int i = 0;
+            while(str[i] == ' '){
+                i ++;
+            }
+            int sign = 1;
+            if(str[i] == '-'){
+                sign = 0;
+                i ++;
+            }
+            else if(str[i] == '+'){
+                sign = 1;
+                i ++;
+            }
+
+            if(str[i] < '0' || str[i] > '9')return 0;
+
+            int ret = 0;
+            while(str[i] >= '0' && str[i] <= '9' && i < strlen(str)){
+                if(sign == 1){
+                    if(ret > 214748364 || (ret == 214748364 && (str[i] - '0') > 7)){
+                        return 2147483647;
+                    }
+                }
+                else if(sign == 0){
+                    if(ret > 214748364 || (ret == 214748364 && (str[i] - '0') > 8)){
+                        return -2147483648;
+                    }
+                }
+                ret = ret * 10 + (str[i] - '0');
+                i ++;
+            }
+
+            return sign > 0 ? ret: -1 * ret;
+        }
+
+
+    //Palindrome Number
+        bool isPalindrome(int x) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            if(x < 0)return false;
+            int div = 1;
+            while(x / div >= 10){
+                div *= 10;
+            }
+
+            int l = 0, r = 0;
+            while(x != 0){
+                l = x / div;
+                r = x % 10;
+                if(l != r)return false;
+
+                x = x % div;
+                x = x / 10;
+                div /= 100;
+            }
+            return true;
+        }
+
+
+
+    //Regular Expression Matching (clean code!!!)
+        bool isMatch(const char *s, const char *p) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            if(*p == 0)return *s == 0;
+
+            if(*(p + 1) != '*'){
+                return((*p == *s) || (*p == '.' && *s != '\0')) && isMatch(s+1, p+1);
+            }
+
+            else{
+                while((*p == *s) || (*p == '.' && *s != 0)){
+                    if(isMatch(s, p + 2))return true;
+                    s ++;
+                }
+            }
+            return isMatch(s, p + 2);
+        }
+
+
+    //Integer to Roman (very good! greedy)
+        int maxArea(vector<int> &height) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            int start = 0, end = height.size() - 1;
+
+            int area, ret = 0;
+            while(start < end){
+                area = min(height[start], height[end]) * (end - start);
+                ret = area > ret? area: ret;
+                if(height[start] < height[end]){
+                    start ++;
+                }
+                else end --;
+            }
+            return ret;
+        }
+
+
+
+    //Longest Common Prefix
+        string longestCommonPrefix(vector<string> &strs) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            int size = strs.size();
+
+            if(size == 0)return "";
+            if(size == 1)return strs[0];
+
+            int j = 0;
+            while(j < strs[0].size()){
+                bool flag = false;
+                for(int i = 1; i < size; i ++){
+                    if(j >= strs[i].size() || strs[0][j] != strs[i][j]){
+                        flag = true;
+                        break;
+                    }
+                }
+                if(flag)break;
+                j++;
+            }
+            return strs[0].substr(0, j);
+        }
 
 
 
