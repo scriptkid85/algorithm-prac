@@ -1054,11 +1054,7 @@ bool isInterleave(string s1, string s2, string s3) {
 
 
 //Unique Binary Search Trees II
-    vector<TreeNode *> generateTrees(int n) {
-        vector<TreeNode*> ret;
-        DFSgenTrees(ret, 1, n);
-        return ret;
-    }
+
     void DFSgenTrees(vector<TreeNode *> &ret, int l, int r){
         if(l > r)
             ret.push_back(NULL); // very important, cannot forget!!, since the left and right child can be NULL
@@ -1078,7 +1074,11 @@ bool isInterleave(string s1, string s2, string s3) {
             }
         }
     }
-
+    vector<TreeNode *> generateTrees(int n) {
+        vector<TreeNode*> ret;
+        DFSgenTrees(ret, 1, n);
+        return ret;
+    }
 
 
 
@@ -1195,235 +1195,701 @@ bool isInterleave(string s1, string s2, string s3) {
 
 
 
-    //Longest Palindromic Substring
-        string preProcess(string s){
-            if(s.length() == 0)return "^&";
-            string ret = "^";
-            for(int i = 0; i < s.length(); i++){
-                ret += ("#" + s.substr(i, 1));
-            }
-            ret += "#&";
-            return ret;
-        }
+//Longest Palindromic Substring
+	string preProcess(string s){
+		if(s.length() == 0)return "^&";
+		string ret = "^";
+		for(int i = 0; i < s.length(); i++){
+			ret += ("#" + s.substr(i, 1));
+		}
+		ret += "#&";
+		return ret;
+	}
 
-        string longestPalindrome(string s) {
-            // Start typing your C/C++ solution below
-            // DO NOT write int main() function
-            string T = preProcess(s);
-            int length = T.length();
-            int *p = new int[length];
-            int center = 0, edge = 0;
-            int maxlength = 0;
-            int maxcenter = 0;
+	string longestPalindrome(string s) {
+		// Start typing your C/C++ solution below
+		// DO NOT write int main() function
+		string T = preProcess(s);
+		int length = T.length();
+		int *p = new int[length];
+		int center = 0, edge = 0;
+		int maxlength = 0;
+		int maxcenter = 0;
 
-            for(int i = 1; i < length - 1; i ++){
-                int mirror = 2 * center - i;
-                if(edge > i)p[i] = min(edge - i, p[mirror]);
-                else p[i] = 0;
-                while(T[i - 1 - p[i]] == T[i + 1 + p[i]])p[i] ++;
+		for(int i = 1; i < length - 1; i ++){
+			int mirror = 2 * center - i;
+			if(edge > i)p[i] = min(edge - i, p[mirror]);
+			else p[i] = 0;
+			while(T[i - 1 - p[i]] == T[i + 1 + p[i]])p[i] ++;
 
-                if(i + p[i] > edge){
-                    center = i;
-                    edge = i + p[i];
-                }
+			if(i + p[i] > edge){
+				center = i;
+				edge = i + p[i];
+			}
 
-                if(p[i] > maxlength){
-                    maxlength = p[i];
-                    maxcenter = i;
-                }
+			if(p[i] > maxlength){
+				maxlength = p[i];
+				maxcenter = i;
+			}
 
-            }
+		}
 
-            delete[] p;
-            return s.substr((maxcenter - 1 - maxlength) / 2, maxlength);
-        }
-
-
-
-    //ZigZag Conversion
-        string convert(string s, int nRows) {
-            // Start typing your C/C++ solution below
-            // DO NOT write int main() function
-            if(nRows == 1)return s;
-            int i = 0;
-            string ret = "";
-            while(i < s.length()){
-                ret += s.substr(i, 1);
-                i += 2 * nRows - 2;
-            }
-
-            for(int j = 1; j < nRows - 1; j ++){
-                i = j;
-                while(i < s.length()){
-                    ret += s.substr(i, 1);
-                    i += 2 * nRows - 2 * (j + 1);
-                    if(i >= s.length())break;
-                    ret += s.substr(i, 1);
-                    i += 2 * j;
-                }
-            }
-
-            if(nRows < 2)return ret;
-            i = nRows - 1;
-            while(i < s.length()){
-                ret += s.substr(i, 1);
-                i += 2 * nRows - 2;
-            }
-            return ret;
-        }
+		delete[] p;
+		return s.substr((maxcenter - 1 - maxlength) / 2, maxlength);
+	}
 
 
 
-    //Reverse Integer (consider some other problems: overflow; 10000 -> 1)
-        int reverse(int x) {
-            // Start typing your C/C++ solution below
-            // DO NOT write int main() function
-            int digit = 0;
-            int ret = 0;
+//ZigZag Conversion
+	string convert(string s, int nRows) {
+		// Start typing your C/C++ solution below
+		// DO NOT write int main() function
+		if(nRows == 1)return s;
+		int i = 0;
+		string ret = "";
+		while(i < s.length()){
+			ret += s.substr(i, 1);
+			i += 2 * nRows - 2;
+		}
 
-            int zx = abs(x);
-            while(zx >= 10){
-                digit = zx % 10;
-                zx /= 10;
-                ret = ret*10 + digit;
-            }
-            ret = ret*10 + zx;
-            return (x >= 0) ? ret : -1 * ret;
-        }
+		for(int j = 1; j < nRows - 1; j ++){
+			i = j;
+			while(i < s.length()){
+				ret += s.substr(i, 1);
+				i += 2 * nRows - 2 * (j + 1);
+				if(i >= s.length())break;
+				ret += s.substr(i, 1);
+				i += 2 * j;
+			}
+		}
+
+		if(nRows < 2)return ret;
+		i = nRows - 1;
+		while(i < s.length()){
+			ret += s.substr(i, 1);
+			i += 2 * nRows - 2;
+		}
+		return ret;
+	}
 
 
-    //String to Integer (atoi)   (take care of the overflow!!)
-        int atoi(const char *str) {
-            // Start typing your C/C++ solution below
-            // DO NOT write int main() function
-            if(str == NULL || strlen(str) == 0)return 0;
-            int i = 0;
-            while(str[i] == ' '){
-                i ++;
-            }
-            int sign = 1;
-            if(str[i] == '-'){
-                sign = 0;
-                i ++;
-            }
-            else if(str[i] == '+'){
-                sign = 1;
-                i ++;
-            }
 
-            if(str[i] < '0' || str[i] > '9')return 0;
+//Reverse Integer (consider some other problems: overflow; 10000 -> 1)
+	int reverse(int x) {
+		// Start typing your C/C++ solution below
+		// DO NOT write int main() function
+		int digit = 0;
+		int ret = 0;
 
-            int ret = 0;
-            while(str[i] >= '0' && str[i] <= '9' && i < strlen(str)){
-                if(sign == 1){
-                    if(ret > 214748364 || (ret == 214748364 && (str[i] - '0') > 7)){
-                        return 2147483647;
+		int zx = abs(x);
+		while(zx >= 10){
+			digit = zx % 10;
+			zx /= 10;
+			ret = ret*10 + digit;
+		}
+		ret = ret*10 + zx;
+		return (x >= 0) ? ret : -1 * ret;
+	}
+
+
+//String to Integer (atoi)   (take care of the overflow!!)
+	int atoi(const char *str) {
+		// Start typing your C/C++ solution below
+		// DO NOT write int main() function
+		if(str == NULL || strlen(str) == 0)return 0;
+		int i = 0;
+		while(str[i] == ' '){
+			i ++;
+		}
+		int sign = 1;
+		if(str[i] == '-'){
+			sign = 0;
+			i ++;
+		}
+		else if(str[i] == '+'){
+			sign = 1;
+			i ++;
+		}
+
+		if(str[i] < '0' || str[i] > '9')return 0;
+
+		int ret = 0;
+		while(str[i] >= '0' && str[i] <= '9' && i < strlen(str)){
+			if(sign == 1){
+				if(ret > 214748364 || (ret == 214748364 && (str[i] - '0') > 7)){
+					return 2147483647;
+				}
+			}
+			else if(sign == 0){
+				if(ret > 214748364 || (ret == 214748364 && (str[i] - '0') > 8)){
+					return -2147483648;
+				}
+			}
+			ret = ret * 10 + (str[i] - '0');
+			i ++;
+		}
+
+		return sign > 0 ? ret: -1 * ret;
+	}
+
+
+//Palindrome Number
+	bool isPalindrome(int x) {
+		// Start typing your C/C++ solution below
+		// DO NOT write int main() function
+		if(x < 0)return false;
+		int div = 1;
+		while(x / div >= 10){
+			div *= 10;
+		}
+
+		int l = 0, r = 0;
+		while(x != 0){
+			l = x / div;
+			r = x % 10;
+			if(l != r)return false;
+
+			x = x % div;
+			x = x / 10;
+			div /= 100;
+		}
+		return true;
+	}
+
+
+
+//Regular Expression Matching (clean code!!!)
+	bool isMatch(const char *s, const char *p) {
+		// Start typing your C/C++ solution below
+		// DO NOT write int main() function
+		if(*p == 0)return *s == 0;
+
+		if(*(p + 1) != '*'){
+			return((*p == *s) || (*p == '.' && *s != '\0')) && isMatch(s+1, p+1);
+		}
+
+		else{
+			while((*p == *s) || (*p == '.' && *s != 0)){
+				if(isMatch(s, p + 2))return true;
+				s ++;
+			}
+		}
+		return isMatch(s, p + 2);
+	}
+
+
+//Integer to Roman (very good! greedy)
+	int maxArea(vector<int> &height) {
+		// Start typing your C/C++ solution below
+		// DO NOT write int main() function
+		int start = 0, end = height.size() - 1;
+
+		int area, ret = 0;
+		while(start < end){
+			area = min(height[start], height[end]) * (end - start);
+			ret = area > ret? area: ret;
+			if(height[start] < height[end]){
+				start ++;
+			}
+			else end --;
+		}
+		return ret;
+	}
+
+
+
+//Longest Common Prefix
+	string longestCommonPrefix(vector<string> &strs) {
+		// Start typing your C/C++ solution below
+		// DO NOT write int main() function
+		int size = strs.size();
+
+		if(size == 0)return "";
+		if(size == 1)return strs[0];
+
+		int j = 0;
+		while(j < strs[0].size()){
+			bool flag = false;
+			for(int i = 1; i < size; i ++){
+				if(j >= strs[i].size() || strs[0][j] != strs[i][j]){
+					flag = true;
+					break;
+				}
+			}
+			if(flag)break;
+			j++;
+		}
+		return strs[0].substr(0, j);
+	}
+
+
+
+//3sum Can write own hashfunction to avoid duplication
+vector<vector<int> > threeSum(vector<int> &num) {
+	// Start typing your C/C++ solution below
+	// DO NOT write int main() function
+	int n = num.size();
+	sort(num.begin(), num.end());
+
+	vector<vector<int> > ret;
+	map<vector<int>, int> save;
+
+	for(int i = 0; i < n - 2; i ++){
+		int j = i + 1;
+		int k = n - 1;
+
+		while(j < k){
+			if(num[i] + num[j] + num[k] < 0){
+				j ++;
+			}
+			else if(num[i] + num[j] + num[k] > 0){
+				k --;
+			}
+			else{
+				vector<int> triple;
+				triple.push_back(num[i]);
+				triple.push_back(num[j]);
+				triple.push_back(num[k]);
+				if(save.find(triple) == save.end()){
+					save[triple] = 1;
+					ret.push_back(triple);
+				}
+				j ++;
+				k --;
+			}
+		}
+	}
+	return ret;
+}
+
+
+// 3Sum Closest
+    int threeSumClosest(vector<int> &num, int target) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        int n = num.size();
+        int closest;
+        int dist = INT_MAX;
+        sort(num.begin(), num.end());
+        for(int i = 0; i < n - 2; i ++){
+            int j = i + 1;
+            int k = n - 1;
+            while(j < k){
+                if(num[i] + num[j] + num[k] - target < 0){
+                    if(abs(num[i] + num[j] + num[k] - target) < dist){
+                        dist = abs(num[i] + num[j] + num[k] - target);
+                        closest = num[i] + num[j] + num[k];
                     }
+                    j ++;
                 }
-                else if(sign == 0){
-                    if(ret > 214748364 || (ret == 214748364 && (str[i] - '0') > 8)){
-                        return -2147483648;
+                else if (num[i] + num[j] + num[k] - target > 0){
+                    if(abs(num[i] + num[j] + num[k] - target) < dist){
+                        dist = abs(num[i] + num[j] + num[k] - target);
+                        closest = num[i] + num[j] + num[k];
                     }
+                    k --;
                 }
-                ret = ret * 10 + (str[i] - '0');
-                i ++;
+                else {
+                    return target;
+                }
             }
+        }
+        return closest;
+    }
 
-            return sign > 0 ? ret: -1 * ret;
+
+//Remove Nth Node From End of List
+    ListNode *removeNthFromEnd(ListNode *head, int n) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        int count = 1;
+        ListNode *fake = new ListNode(0);
+        fake->next = head;
+        ListNode *current = head;
+        ListNode *pre = fake;
+        ListNode *cut = head;
+        while(count < n){
+            cut = cut->next;
+            count ++;
         }
 
+        while(cut->next){
+            current = current->next;
+            pre = pre->next;
+            cut = cut->next;
+        }
+        pre->next = current->next;
+        return fake->next;
+    }
 
-    //Palindrome Number
-        bool isPalindrome(int x) {
-            // Start typing your C/C++ solution below
-            // DO NOT write int main() function
-            if(x < 0)return false;
-            int div = 1;
-            while(x / div >= 10){
-                div *= 10;
+
+//Valid Parentheses
+    int maxtop(stack<int> a, stack<int> b, stack<int> c){
+        int maxret = 0;
+        if(a.size() > 0)
+            maxret = max(maxret, a.top());
+        if(b.size() > 0)
+            maxret = max(maxret, b.top());
+        if(c.size() > 0)
+            maxret = max(maxret, c.top());
+        return maxret;
+    }
+
+    bool isValid(string s) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        stack<int> p, m, b;
+        int i = 0;
+        while(s[i] != 0){
+            if(s[i] == '('){
+                p.push(i);
             }
-
-            int l = 0, r = 0;
-            while(x != 0){
-                l = x / div;
-                r = x % 10;
-                if(l != r)return false;
-
-                x = x % div;
-                x = x / 10;
-                div /= 100;
+            else if(s[i] == '['){
+                m.push(i);
             }
-            return true;
+            else if(s[i] == '{'){
+                b.push(i);
+            }
+            else if(s[i] == ')'){
+                if(p.size() > 0 && maxtop(p, m, b) == p.top()){
+                    p.pop();
+                    i ++;
+                    continue;
+                }
+                break;
+            }
+            else if(s[i] == ']'){
+                if(m.size() > 0 && maxtop(p, m, b) == m.top()){
+                    m.pop();
+                    i ++;
+                    continue;
+                }
+                break;
+            }
+            else if(s[i] == '}'){
+                if(b.size() > 0 && maxtop(p, m, b) == b.top()){
+                    b.pop();
+                    i++;
+                    continue;
+                }
+                break;
+            }
+            i++;
+        }
+        if(s[i] == 0 && p.size() == 0 && m.size() == 0 && b.size() == 0)return true;
+        return false;
+    }
+
+
+
+//Generate Parentheses
+    void saveallParenthesis(vector<string> &ret, string parenth, int right, int left){
+        if(right == 0 && left == 0){
+            ret.push_back(parenth);
+            return;
         }
 
+        if(right > 0){
+            saveallParenthesis(ret, parenth + ")", right - 1, left);
+        }
+        if(left > 0){
+            saveallParenthesis(ret, parenth + "(", right + 1, left - 1);
+        }
+    }
+
+    vector<string> generateParenthesis(int n) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        vector<string> ret;
+        string parenth = "";
+        saveallParenthesis(ret, parenth, 0, n);
+        return ret;
+    }
 
 
-    //Regular Expression Matching (clean code!!!)
-        bool isMatch(const char *s, const char *p) {
-            // Start typing your C/C++ solution below
-            // DO NOT write int main() function
-            if(*p == 0)return *s == 0;
 
-            if(*(p + 1) != '*'){
-                return((*p == *s) || (*p == '.' && *s != '\0')) && isMatch(s+1, p+1);
+//Swap Nodes in Pairs
+    ListNode *swapPairs(ListNode *head) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        ListNode *fake = new ListNode(0);
+        fake->next = head;
+        ListNode *nex, *cur = head, *pre = fake;
+        while(cur && cur -> next){
+            nex = cur->next;
+            pre -> next = nex;
+            cur->next = nex->next;
+            nex -> next = cur;
+
+            if(cur->next){
+                pre = cur;
+                cur = cur->next;
             }
-
             else{
-                while((*p == *s) || (*p == '.' && *s != 0)){
-                    if(isMatch(s, p + 2))return true;
-                    s ++;
-                }
+                break;
             }
-            return isMatch(s, p + 2);
+        }
+        return fake->next;
+    }
+
+
+//Remove Duplicates from Sorted Array
+    int removeDuplicates(int A[], int n) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+
+        if(n <= 1)return n;
+        int newlength;
+        int val;
+
+        val = A[0];
+        newlength = 1;
+        for(int i = 1; i < n; i ++){
+            if(A[i] != val){
+                val = A[i];
+                A[newlength] = val;
+                ++ newlength;
+            }
+        }
+        return newlength;
+    }
+
+
+//Remove Element
+    int removeElement(int A[], int n, int elem) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+
+        if(n < 1)return n;
+
+        int newlength = 0;
+
+        int i = 0, j = n - 1;
+
+
+        while(A[j] == elem && j >= 0){
+                j --;
+        }
+        while(A[i] != elem && i < n){
+                i++;
+                newlength ++;
         }
 
-
-    //Integer to Roman (very good! greedy)
-        int maxArea(vector<int> &height) {
-            // Start typing your C/C++ solution below
-            // DO NOT write int main() function
-            int start = 0, end = height.size() - 1;
-
-            int area, ret = 0;
-            while(start < end){
-                area = min(height[start], height[end]) * (end - start);
-                ret = area > ret? area: ret;
-                if(height[start] < height[end]){
-                    start ++;
-                }
-                else end --;
+        while(i < j){
+            A[i] = A[j];
+            j --;
+            while(A[j] == elem && j >= i){
+                j --;
             }
-            return ret;
+            while(A[i] != elem && i <= j){
+                i++;
+                newlength ++;
+            }
+        }
+        return newlength;
+    }
+
+
+// Divide Two Integers VERY VERY GOOD
+    int divide(int dividend, int divisor) {
+
+        long long a = (double)abs( dividend);
+        long long b = (double)abs( divisor);
+
+        long long ret = 0;
+        while(a >= b){
+            long long c = b;
+            for(int i = 0; a >= c; i++, c = c << 1){
+                a -= c;
+                ret += (1 << i);
+            }
+        }
+        return ((dividend ^ divisor) >> 31) ? (int)(-ret) : (int)(ret);
+    }
+
+
+//Next Permutation (good)
+    void nextPermutation(vector<int> &num) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        int i = num.size() - 2;
+        while(i >= 0 && num[i] >= num[i + 1]){
+            i --;
         }
 
-
-
-    //Longest Common Prefix
-        string longestCommonPrefix(vector<string> &strs) {
-            // Start typing your C/C++ solution below
-            // DO NOT write int main() function
-            int size = strs.size();
-
-            if(size == 0)return "";
-            if(size == 1)return strs[0];
-
-            int j = 0;
-            while(j < strs[0].size()){
-                bool flag = false;
-                for(int i = 1; i < size; i ++){
-                    if(j >= strs[i].size() || strs[0][j] != strs[i][j]){
-                        flag = true;
-                        break;
-                    }
-                }
-                if(flag)break;
-                j++;
+        if(i >= 0){
+            int j = num.size() - 1;
+            while(num[i] >= num[j]){
+                j --;
             }
-            return strs[0].substr(0, j);
+            int tmp = num[j];
+            num[j] = num[i];
+            num[i] = tmp;
         }
+        int j = num.size() - 1;
+        i ++;
+        while(i < j){
+            int tmp = num[j];
+            num[j] = num[i];
+            num[i] = tmp;
+            i ++;
+            j --;
+        }
+    }
+
+
+// Longest Valid Parentheses
+    int longestValidParentheses(string s) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+
+        const char *base = s.c_str();
+        const char *p = base;
+        stack<const char*> stk;
+        int maxN = 0;
+
+        while(*p){
+            if(*p == '(')stk.push(p);
+            else if(*p == ')'){
+                if(!stk.empty() && *stk.top() == '('){
+                    stk.pop();
+                    int tmp = (stk.empty()? base - 1: stk.top());
+                    maxN = max(p - tmp, maxN);  //think carefully of this step!!! why max( , )
+                }
+                else{
+                    stk.push(p);
+                }
+            }
+            p ++;
+        }
+        return maxN;
+    }
+
+
+
+//Search in Rotated Sorted Array
+    int BSrotated(int A[], int l, int r, int target){
+        if(l >= r){
+            return A[r]==target? r:-1;
+        }
+
+        int middle = (l + r) / 2;
+
+        if(A[middle] == target)return middle;
+
+        if(A[l] < A[middle]){
+            if(A[l] <= target && target <= A[middle - 1])
+                return BSrotated(A, l, middle - 1, target);
+            else
+                return BSrotated(A, middle + 1, r, target);
+        }
+        else{
+            if(A[middle + 1] <= target && target <= A[r])
+                return BSrotated(A, middle + 1, r, target);
+            else
+                return BSrotated(A, l, middle - 1, target);
+        }
+    }
+
+    int search(int A[], int n, int target) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        return BSrotated(A, 0, n - 1, target);
+    }
+
+
+
+//Search Insert Position
+    int searchInsert(int A[], int n, int target) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        int i = 0, j = n - 1;
+        int middle;
+        while(i < j){
+            middle = (i + j) / 2;
+            if(A[middle] == target){
+                i = middle;
+                break;
+            }
+            if(A[middle] < target){
+                i = middle + 1;
+            }
+            else {
+                j = middle - 1;
+            }
+        }
+        if(A[i] >= target) return i;
+        else return i + 1;
+    }
+
+//N-Queens (VERY VERY VERY_ GOOD CODE)
+    int upper;
+    vector<vector<string> > ret;
+
+    vector<vector<string> > solveNQueens(int n) {
+        upper = (1 << n) - 1;
+        ret.clear();
+        vector<string> board(n, string(n, '.'));
+        helper(0, 0, 0, 0, board);
+
+        return ret;
+    }
+
+    void helper(int row, int ld, int rd, int curr, vector<string>& board) {
+        if (row == upper) {
+            ret.push_back(board);
+            return ;
+        }
+        int pos = upper & ~(row | ld | rd);
+        while (pos) {
+            int p = pos & (-pos);
+            pos ^= p;
+            int id = (int)(log(p+0.5)/log(2));
+            board[curr][id] = 'Q';
+            helper(row^p, (ld^p)<<1, (rd^p)>>1, curr+1, board);
+            board[curr][id] = '.';
+        }
+    }
+
+
+
+
+//Largest Rectangle in Histogram (VERY VERY GOOD!!!)
+    int largestRectangleArea(vector<int> &h) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        stack<int> p;
+        int i = 0, m = 0;
+        h.push_back(0);
+        while(i < h.size()) {
+            if(p.empty() || h[p.top()] <= h[i])
+                p.push(i++);
+            else {
+                int t = p.top();
+                p.pop();
+                m = max(m, h[t] * (p.empty() ? i : i - p.top() - 1 ));
+            }
+        }
+        return m;
+    }
 
 
 
 int main(int argc, char *argv[]){
+	int k = 8;
+	ListNode **ptrs = 0;
+	ptrs = new ListNode*[k];
+	for(int i = 0; i < k; i++){
+		ptrs[i] = new ListNode(i);
+		ptrs[i]->next = new ListNode(i);
+	}
 
+	for(int i = 0; i < k; i++){
+		ListNode* ptr = ptrs[i];
+		while(ptr){
+			cout << ptr -> val << " ";
+			ptr = ptr->next;
+		}
+		cout << endl;
+	}
 }

@@ -4,13 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../sources/twosum.cpp 
+../sources/problems.cpp 
 
 OBJS += \
-./sources/twosum.o 
+./sources/problems.o 
 
 CPP_DEPS += \
-./sources/twosum.d 
+./sources/problems.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

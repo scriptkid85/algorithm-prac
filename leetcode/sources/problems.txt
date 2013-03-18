@@ -40,7 +40,7 @@ Merge Sorted ArrayMay 20 '12
 Scramble StringApr 30 '12
 Partition ListApr 30 '12
 Maximal RectangleApr 24 '12
-Largest Rectangle in HistogramApr 23 '12
+Largest Rectangle in HistogramApr 23 '12					!!!!!!			pass (stack is used to simplify !!)
 Remove Duplicates from Sorted List IIApr 22 '12
 Remove Duplicates from Sorted ListApr 22 '12
 Search in Rotated Sorted Array IIApr 20 '12
@@ -74,7 +74,7 @@ Jump GameMar 25 '12
 Spiral MatrixMar 25 '12
 Maximum SubarrayMar 21 '12
 N-Queens IIMar 20 '12
-N-QueensMar 20 '12
+N-QueensMar 20 '12											!!!!!						pass very good idea!! using bit to denote queen
 Pow(x, n)Mar 20 '12
 AnagramsMar 19 '12
 Rotate ImageMar 18 '12
@@ -90,26 +90,26 @@ Combination SumMar 7 '12
 Count and SayMar 6 '12
 Sudoku SolverMar 4 '12
 Valid SudokuMar 3 '12
-Search Insert PositionMar 3 '12
+Search Insert PositionMar 3 '12															pass
 Search for a RangeMar 3 '12
-Search in Rotated Sorted ArrayMar 3 '12
-Longest Valid ParenthesesMar 1 '12
-Next PermutationFeb 25 '12
+Search in Rotated Sorted ArrayMar 3 '12													pass
+Longest Valid ParenthesesMar 1 '12														pass
+Next PermutationFeb 25 '12									!!!							pass think clear of the strategy 
 Substring with Concatenation of All WordsFeb 24 '12
-Divide Two IntegersFeb 18 '12
+Divide Two IntegersFeb 18 '12						     	!!!!!!!						pass very very very good
 Implement strStr()Feb 18 '12
-Remove ElementFeb 16 '12
-Remove Duplicates from Sorted ArrayFeb 16 '12
+Remove ElementFeb 16 '12																pass
+Remove Duplicates from Sorted ArrayFeb 16 '12											pass
 Reverse Nodes in k-GroupFeb 16 '12
-Swap Nodes in PairsFeb 15 '12
+Swap Nodes in PairsFeb 15 '12															pass
 Merge k Sorted ListsFeb 14 '12
-Generate ParenthesesFeb 13 '12
-Valid ParenthesesJan 30 '12
-Remove Nth Node From End of ListJan 28 '12
+Generate ParenthesesFeb 13 '12															pass
+Valid ParenthesesJan 30 '12																pass
+Remove Nth Node From End of ListJan 28 '12												pass
 Letter Combinations of a Phone NumberJan 27 '12
 4SumJan 27 '12
-3Sum ClosestJan 18 '12
-3SumJan 18 '12
+3Sum ClosestJan 18 '12																	pass
+3SumJan 18 '12																			
 Longest Common PrefixJan 17 '12															pass
 Roman to IntegerJan 15 '12
 Integer to RomanJan 15 '12
