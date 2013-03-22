@@ -1754,7 +1754,7 @@ vector<vector<int> > threeSum(vector<int> &num) {
                 if(!stk.empty() && *stk.top() == '('){
                     stk.pop();
                     int tmp = (stk.empty()? base - 1: stk.top());
-                    maxN = max(p - tmp, maxN);  //think carefully of this step!!! why max( , )
+                    maxN = max((p - tmp), maxN);  //think carefully of this step!!! why max( , )
                 }
                 else{
                     stk.push(p);
@@ -1854,25 +1854,292 @@ vector<vector<int> > threeSum(vector<int> &num) {
 
 
 
-//Largest Rectangle in Histogram (VERY VERY GOOD!!!)
-    int largestRectangleArea(vector<int> &h) {
-        // Start typing your C/C++ solution below
-        // DO NOT write int main() function
-        stack<int> p;
-        int i = 0, m = 0;
-        h.push_back(0);
-        while(i < h.size()) {
-            if(p.empty() || h[p.top()] <= h[i])
-                p.push(i++);
-            else {
-                int t = p.top();
-                p.pop();
-                m = max(m, h[t] * (p.empty() ? i : i - p.top() - 1 ));
+
+    //Subsets II  (good practice for bruteforce with recursive)
+        void addsubset(vector<int> &S, int start, vector<vector<int> > &ret, vector<int> set){
+            ret.push_back(set);
+
+            int pre;
+            if(S[start] == -1)pre = -2;
+            else pre = -1;
+            for(int i = start; i < S.size(); i++){
+                if(S[i] != pre){
+                    set.push_back(S[i]);
+                    addsubset(S, i + 1, ret, set);
+                    set.pop_back();
+                    pre = S[i];
+                }
             }
         }
-        return m;
+        vector<vector<int> > subsetsWithDup(vector<int> &S) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            vector<vector<int> > ret;
+            vector<int> set;
+            sort(S.begin(), S.end());
+            addsubset(S, 0, ret, set);
+            return ret;
+        }
+
+
+
+
+
+    //Decode Ways
+    int numDecodings(string s) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        int length = s.length();
+        if(length == 0)return 0;
+        if(length == 1 && s[0] != '0')return 1;
+        if(length == 1 && s[0] == '0')return 0;
+
+        int ret[100000];
+        ret[length - 1] = (s[length - 1] == '0') ? 0: 1;
+        if(s[length - 2] == '0') ret[length - 2] = 0;
+        else if(s[length - 2] < '2' || (s[length - 2] == '2' && s[length - 1] < '7')){
+            ret[length - 2] = ret[length - 1] + 1;
+        }
+        else ret[length - 2] = ret[length - 1];
+
+        int head = length - 2;
+        while(--head >= 0){
+            if(s[head] == '0') ret[head] = 0;
+            else if(s[head] < '2' || (s[head] == '2' && s[head + 1] < '7')){
+                ret[head] = ret[head + 1] + ret[head + 2];
+            }
+            else ret[head] = ret[head + 1];
+        }
+        return ret[0];
     }
 
+
+
+
+
+    //Gray Code (VERY GOOD, but another more recursive method : generated recursively from the list for n−1 bits by reflecting the list (i.e. listing the entries in reverse order), concatenating the original list with the reversed list, prefixing the entries in the original list with a binary 0, and then prefixing the entries in the reflected list with a binary 1)
+        vector<int> grayCode(int n) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            int size = 1 << n;
+            vector<int> ret;
+            for(int i = 0; i < size; i++){
+                ret.push_back((i >> 1) ^ i);
+            }
+            return ret;
+        }
+
+
+
+
+    //Merge Sorted Array
+        void merge(int A[], int m, int B[], int n) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            int a = m - 1, b = n - 1;
+            while(a >= 0 && b >= 0){
+                int tmp = a + b + 1;
+                A[tmp] = A[a] > B[b]? A[a--]:B[b--];
+            }
+            if(b >= 0){
+                while(b >= 0){
+                    A[b] = B[b];
+                    b --;
+                }
+            }
+        }
+
+
+
+    //Scramble String (recursive is easy to code. try DP!!!)
+        bool isScramble(string s1, string s2) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            if(s1.length() != s2.length())return false;
+            if(s1 == s2)return true;
+            string t1 = s1, t2 = s2;
+            sort(t1.begin(), t1.end());
+            sort(t2.begin(), t2.end());
+            if(t1 != t2)return false;
+            for(int i = 1; i < s1.length(); ++i){
+                string subs11 = s1.substr(0, i);
+                string subs12 = s1.substr(i);
+                string subs21 = s2.substr(0, i);
+                string subs22 = s2.substr(i);
+                if(isScramble(subs11, subs21) && isScramble(subs12, subs22))return true;
+
+                subs21 = s2.substr(s2.length() - i);
+                subs22 = s2.substr(0, s2.length() - i);
+                if(isScramble(subs11, subs21) && isScramble(subs12, subs22))return true;
+            }
+            return false;
+        }
+
+
+
+    //Partition List
+        ListNode *partition(ListNode *head, int x) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            ListNode *fake = new ListNode(0);
+            fake -> next = head;
+
+            ListNode *divide = fake;
+
+            while(divide->next){
+                if(divide->next->val >= x)break;
+                divide = divide->next;
+            }
+
+            if(!(divide->next))return fake->next;
+
+            ListNode *pre = divide -> next;
+            ListNode *current = pre -> next;
+
+            while(current){
+                if(current->val < x){
+                    pre -> next = current -> next;
+                    current -> next = divide -> next;
+                    divide -> next = current;
+
+                    current = pre -> next;
+                    divide = divide -> next;  //do not forget this step!! update the divide point when exchange a node
+                }
+                else{
+                    pre = current;
+                    current = current -> next;
+                }
+            }
+            return fake -> next;
+        }
+
+    // CLEAN CODE!!! very good idea, create two links for small and large part, and then concatenate them at last
+        ListNode *partition2(ListNode *head, int x) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            ListNode *a = new ListNode(0);
+            ListNode *small = a;
+
+            ListNode *b = new ListNode(0);
+            ListNode *big = b;
+
+            while(head){
+                if(head -> val < x){
+                    small -> next = head;
+                    small = small -> next;
+                }
+                else{
+                    big -> next = head;
+                    big = big -> next;
+                }
+                head = head -> next;
+            }
+
+            big -> next = NULL;  // do not forget this! make sure the link is terminated.
+            small -> next = b -> next;
+
+            return a -> next;
+        }
+
+
+
+    //Largest Rectangle in Histogram
+    //(very very good, use stack's property to find the nearest two smaller boundary)
+        int largestRectangleArea(vector<int> &height) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            stack<int> stk;
+            height.push_back(0);
+
+            int i = 0;
+            int maxarea = 0;
+            while(i < height.size()){
+                if(stk.empty() || height[i] >= height[stk.top()]){
+                    stk.push(i ++);
+                }
+                else{
+                    int top = stk.top();
+                    stk.pop();
+                    maxarea = max((stk.empty()? i : (i - stk.top() - 1)) * height[top], maxarea);
+                }
+            }
+            return maxarea;
+        }
+
+
+
+
+    //Maximal Rectangle
+    //Using the one-dimension case as a subalg, Largest Rectangle in Histogram
+        int maximalRectangle(vector<vector<char> > &matrix) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            if(matrix.size() == 0)return 0;
+
+            vector<vector<int> > height;
+            vector<int> tmp;
+            for(int i = 0; i < matrix[0].size(); ++i){
+                if(matrix[0][i] == '0')tmp.push_back(0);
+                else tmp.push_back(1);
+            }
+            height.push_back(tmp);
+
+
+            for(int i = 1; i < matrix.size(); ++i){
+                vector<int> tmp;
+                for(int j = 0; j < matrix[i].size(); ++j){
+                    if(matrix[i][j] == '0')
+                        tmp.push_back(0);
+                    else{
+                        tmp.push_back(height[i - 1][j] + 1);
+                    }
+                }
+                height.push_back(tmp);
+            }
+
+            int ret = 0;
+            for(int i = 0; i < height.size(); ++i){
+                ret = max(largestRectangleArea(height[i]), ret);
+            }
+            return ret;
+
+        }
+
+
+
+    //Remove Duplicates from Sorted List II
+        ListNode *deleteDuplicates(ListNode *head) {
+            // Start typing your C/C++ solution below
+            // DO NOT write int main() function
+            ListNode *a = new ListNode(0);
+
+            ListNode *tail = a;
+
+            ListNode *current, *pre = head;
+            while(pre && pre -> next){
+                current = pre->next;
+                if(current->val != pre -> val){
+                    tail->next = pre;
+                    tail = tail -> next;
+                    pre = pre -> next;
+                }
+
+                else{
+                    int preval = current -> val;
+                    while(current){
+                        if(current -> val != preval)break;
+                        current = current -> next;
+                    }
+                    pre = current;
+                }
+            }
+            if(pre){
+                tail -> next = pre;
+                tail = tail -> next;
+            }
+            if(tail)tail -> next = NULL;
+            return a->next;
+        }
 
 
 int main(int argc, char *argv[]){

@@ -33,15 +33,16 @@ Unique Binary Search TreesAug 27 '12										pass (mostly, recursive algorithm 
 Binary Tree Inorder TraversalAug 27 '12										pass
 Restore IP AddressesAug 8 '12												pass (consider carefully about what valid ip is!!! 01.1.1.1 is not!)
 Reverse Linked List IIJun 27 '12							!!!!	  		pass (clean code!)
-Subsets IIJun 25 '12
-Decode WaysJun 25 '12
-Gray CodeMay 20 '12
-Merge Sorted ArrayMay 20 '12
-Scramble StringApr 30 '12
-Partition ListApr 30 '12
-Maximal RectangleApr 24 '12
+Subsets IIJun 25 '12										!!!!!			pass (think about how to recursive without repeating same set)
+Decode WaysJun 25 '12														pass (back track dp)
+Gray CodeMay 20 '12											!!				pass (fixed method)
+Merge Sorted ArrayMay 20 '12												pass
+Scramble StringApr 30 '12									!!!!			pass (avoid impossible case at first)
+															try DP
+Partition ListApr 30 '12									!!!				pass (very good idea, create two links for small and large part, and then concatenate them at last)
+Maximal RectangleApr 24 '12									!!!!!!			pass (Using 1 dimension case : histogram)
 Largest Rectangle in HistogramApr 23 '12					!!!!!!			pass (stack is used to simplify !!)
-Remove Duplicates from Sorted List IIApr 22 '12
+Remove Duplicates from Sorted List IIApr 22 '12								pass
 Remove Duplicates from Sorted ListApr 22 '12
 Search in Rotated Sorted Array IIApr 20 '12
 Remove Duplicates from Sorted Array IIApr 19 '12
@@ -74,7 +75,7 @@ Jump GameMar 25 '12
 Spiral MatrixMar 25 '12
 Maximum SubarrayMar 21 '12
 N-Queens IIMar 20 '12
-N-QueensMar 20 '12											!!!!!						pass very good idea!! using bit to denote queen
+N-QueensMar 20 '12											!!!!!			pass very good idea!! using bit to denote queen
 Pow(x, n)Mar 20 '12
 AnagramsMar 19 '12
 Rotate ImageMar 18 '12
@@ -90,37 +91,37 @@ Combination SumMar 7 '12
 Count and SayMar 6 '12
 Sudoku SolverMar 4 '12
 Valid SudokuMar 3 '12
-Search Insert PositionMar 3 '12															pass
+Search Insert PositionMar 3 '12												pass
 Search for a RangeMar 3 '12
-Search in Rotated Sorted ArrayMar 3 '12													pass
-Longest Valid ParenthesesMar 1 '12														pass
-Next PermutationFeb 25 '12									!!!							pass think clear of the strategy 
+Search in Rotated Sorted ArrayMar 3 '12										pass
+Longest Valid ParenthesesMar 1 '12							!!!				pass
+Next PermutationFeb 25 '12									!!!				pass think clear of the strategy 
 Substring with Concatenation of All WordsFeb 24 '12
-Divide Two IntegersFeb 18 '12						     	!!!!!!!						pass very very very good
+Divide Two IntegersFeb 18 '12						     	!!!!!!!			pass very very very good
 Implement strStr()Feb 18 '12
-Remove ElementFeb 16 '12																pass
-Remove Duplicates from Sorted ArrayFeb 16 '12											pass
+Remove ElementFeb 16 '12													pass
+Remove Duplicates from Sorted ArrayFeb 16 '12								pass
 Reverse Nodes in k-GroupFeb 16 '12
-Swap Nodes in PairsFeb 15 '12															pass
+Swap Nodes in PairsFeb 15 '12												pass
 Merge k Sorted ListsFeb 14 '12
-Generate ParenthesesFeb 13 '12															pass
-Valid ParenthesesJan 30 '12																pass
-Remove Nth Node From End of ListJan 28 '12												pass
+Generate ParenthesesFeb 13 '12												pass
+Valid ParenthesesJan 30 '12													pass
+Remove Nth Node From End of ListJan 28 '12									pass
 Letter Combinations of a Phone NumberJan 27 '12
 4SumJan 27 '12
-3Sum ClosestJan 18 '12																	pass
+3Sum ClosestJan 18 '12														pass
 3SumJan 18 '12																			
-Longest Common PrefixJan 17 '12															pass
+Longest Common PrefixJan 17 '12												pass
 Roman to IntegerJan 15 '12
 Integer to RomanJan 15 '12
-Container With Most WaterJan 9 '12							!!!!!						pass (VERY GOOD ! GREEDY)
-Regular Expression MatchingJan 8 '12						!!!!						pass 
-Palindrome NumberJan 4 '12									!!!							pass (from two side to middle!!)		
-String to Integer (atoi)Dec 27 '11							!!!!!						PASS (many special case: overflow, +, -, and other garbage chars)
-Reverse IntegerDec 26 '11									!!							pass (think about overfolw)
-ZigZag ConversionDec 6 '11																pass
-Longest Palindromic SubstringNov 11 '11						!!!!!!!						pass (very good, instead of considering the right boundary, considering the center and the property of lengths)
-Add Two Numbers																			pass
-Longest Substring Without Repeating CharactersMay 16 '11								pass (with hashtable, other ideas? a array to record is also ok)		
-Median of Two Sorted ArraysMar 28 '11													pass (basecase details are complicate)
-Two Sum																					pass
+Container With Most WaterJan 9 '12							!!!!!			pass (VERY GOOD ! GREEDY)
+Regular Expression MatchingJan 8 '12						!!!!			pass 
+Palindrome NumberJan 4 '12									!!!				pass (from two side to middle!!)		
+String to Integer (atoi)Dec 27 '11							!!!!!			PASS (many special case: overflow, +, -, and other garbage chars)
+Reverse IntegerDec 26 '11									!!				pass (think about overfolw)
+ZigZag ConversionDec 6 '11													pass
+Longest Palindromic SubstringNov 11 '11						!!!!!!!			pass (very good, instead of considering the right boundary, considering the center and the property of lengths)
+Add Two Numbers																pass
+Longest Substring Without Repeating CharactersMay 16 '11					pass (with hashtable, other ideas? a array to record is also ok)		
+Median of Two Sorted ArraysMar 28 '11										pass (basecase details are complicate)
+Two Sum																		pass
